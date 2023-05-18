@@ -660,6 +660,445 @@
         </div>
       </div>
     </div>
+    <div class="w-full bg-white py-20">
+      <div class="flex justify-between items-center w-full px-36">
+        <span class="text-black text-[40px] font-bold">
+          Popular Product</span
+        >
+       <div class="flex justify-center items-center gap-4">
+        <button class="bg-[#F8F8F8] px-4 py-4 rounded-full shadow-none">
+          <span class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-[#C5C4C4]">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+            </svg>            
+          </span>
+        </button>
+        <button class="bg-[#FF9494] px-4 py-4 rounded-full shadow-none">
+          <span class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+            </svg>
+          </span>
+        </button>
+      </div>
+      </div>
+      <div class="grid grid-cols-4 gap-7 w-full pt-7 px-36">
+        <div class="bg-white shadow-lg p-2 rounded-lg max-h-[400px]">
+          <div class="relative">
+            <img
+              src="../assets/images/shirt.jpeg"
+              class="h-[250px] w-full rounded-2xl"
+            />
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-9 h-9 text-[#C5C4C4] absolute top-2 right-2 rounded-full bg-white p-2 stroke-[3px]"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+              />
+            </svg>
+          </div>
+          <div class="flex m-5 justify-between">
+            <div class="flex flex-col">
+              <span class="text-black text-lg font-bold"> Smart t- Shirt </span>
+              <div class="flex gap-4">
+                <span
+                  class="text-[#C5C4C4] line-through decoration-[#FF9494] text-[13px] font-bold"
+                >
+                  100$
+                </span>
+                <div class="flex justify-center items-center">
+                  <span class="text-black font-extrabold text-[20px]">
+                    40
+                  </span>
+                  <span
+                    class="text-[#FF9494] font-extrabold text-[12px] align-bottom"
+                  >
+                    $
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div
+                class="px-4 py-2 bg-[#FF9494] rounded-full hover:bg-[#FF9494]/80 font-extrabold text-sm"
+              >
+                BUY NOW
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white shadow-lg p-2 rounded-lg max-h-[400px]">
+          <div class="relative">
+            <img
+              src="../assets/images/shirt2.jpeg"
+              class="h-[250px] w-full rounded-2xl"
+            />
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="#FF9494"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-9 h-9 text-[#FF9494] absolute top-2 right-2 rounded-full bg-white p-2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+              />
+            </svg>
+          </div>
+          <div class="flex m-5 justify-between">
+            <div class="flex flex-col">
+              <span class="text-black text-lg font-bold"> Smart t- Shirt </span>
+              <div class="flex gap-4">
+                <span
+                  class="text-[#C5C4C4] line-through decoration-[#FF9494] text-[13px] font-bold"
+                >
+                  100$
+                </span>
+                <div class="flex justify-center items-center">
+                  <span class="text-black font-extrabold text-[20px]">
+                    40
+                  </span>
+                  <span
+                    class="text-[#FF9494] font-extrabold text-[12px] align-bottom"
+                  >
+                    $
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div
+                class="px-4 py-2 border-2 border-[#C5C4C4] rounded-full hover:bg-[#FF9494]/80 font-extrabold text-sm text-[#C5C4C4]"
+              >
+                BUY NOW
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white shadow-lg p-2 rounded-lg max-h-[400px]">
+          <div class="relative">
+            <img
+              src="../assets/images/shirt3.jpeg"
+              class="h-[250px] w-full rounded-2xl"
+            />
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-9 h-9 text-[#C5C4C4] absolute top-2 right-2 rounded-full bg-white p-2 stroke-[3px]"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+              />
+            </svg>
+          </div>
+          <div class="flex m-5 justify-between">
+            <div class="flex flex-col">
+              <span class="text-black text-lg font-bold"> Smart t- Shirt </span>
+              <div class="flex gap-4">
+                <span
+                  class="text-[#C5C4C4] line-through decoration-[#FF9494] text-[13px] font-bold"
+                >
+                  100$
+                </span>
+                <div class="flex justify-center items-center">
+                  <span class="text-black font-extrabold text-[20px]">
+                    40
+                  </span>
+                  <span
+                    class="text-[#FF9494] font-extrabold text-[12px] align-bottom"
+                  >
+                    $
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div
+                class="px-4 py-2 border-2 border-[#C5C4C4] rounded-full hover:bg-[#FF9494]/80 font-extrabold text-sm text-[#C5C4C4]"
+              >
+                BUY NOW
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white shadow-lg p-2 rounded-lg max-h-[400px]">
+          <div class="relative">
+            <img
+              src="../assets/images/shirt4.webp"
+              class="h-[250px] w-full rounded-2xl"
+            />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-9 h-9 text-[#C5C4C4] absolute top-2 right-2 rounded-full bg-white p-2 stroke-[3px]"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+              />
+            </svg>
+          </div>
+          <div class="flex m-5 justify-between">
+            <div class="flex flex-col">
+              <span class="text-black text-lg font-bold"> Smart t- Shirt </span>
+              <div class="flex gap-4">
+                <span
+                  class="text-[#C5C4C4] line-through decoration-[#FF9494] text-[13px] font-bold"
+                >
+                  100$
+                </span>
+                <div class="flex justify-center items-center">
+                  <span class="text-black font-extrabold text-[20px]">
+                    40
+                  </span>
+                  <span
+                    class="text-[#FF9494] font-extrabold text-[12px] align-bottom"
+                  >
+                    $
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div
+                class="px-4 py-2 border-2 border-[#C5C4C4] rounded-full hover:bg-[#FF9494]/80 font-extrabold text-sm text-[#C5C4C4]"
+              >
+                BUY NOW
+              </div>
+            </div>
+          </div>
+        </div>
+           <div class="bg-white shadow-lg p-2 rounded-lg max-h-[400px]">
+          <div class="relative">
+            <img
+              src="../assets/images/shirt.jpeg"
+              class="h-[250px] w-full rounded-2xl"
+            />
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-9 h-9 text-[#C5C4C4] absolute top-2 right-2 rounded-full bg-white p-2 stroke-[3px]"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+              />
+            </svg>
+          </div>
+          <div class="flex m-5 justify-between">
+            <div class="flex flex-col">
+              <span class="text-black text-lg font-bold"> Smart t- Shirt </span>
+              <div class="flex gap-4">
+                <span
+                  class="text-[#C5C4C4] line-through decoration-[#FF9494] text-[13px] font-bold"
+                >
+                  100$
+                </span>
+                <div class="flex justify-center items-center">
+                  <span class="text-black font-extrabold text-[20px]">
+                    40
+                  </span>
+                  <span
+                    class="text-[#FF9494] font-extrabold text-[12px] align-bottom"
+                  >
+                    $
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div
+                class="px-4 py-2 bg-[#FF9494] rounded-full hover:bg-[#FF9494]/80 font-extrabold text-sm"
+              >
+                BUY NOW
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white shadow-lg p-2 rounded-lg max-h-[400px]">
+          <div class="relative">
+            <img
+              src="../assets/images/shirt2.jpeg"
+              class="h-[250px] w-full rounded-2xl"
+            />
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="#FF9494"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-9 h-9 text-[#FF9494] absolute top-2 right-2 rounded-full bg-white p-2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+              />
+            </svg>
+          </div>
+          <div class="flex m-5 justify-between">
+            <div class="flex flex-col">
+              <span class="text-black text-lg font-bold"> Smart t- Shirt </span>
+              <div class="flex gap-4">
+                <span
+                  class="text-[#C5C4C4] line-through decoration-[#FF9494] text-[13px] font-bold"
+                >
+                  100$
+                </span>
+                <div class="flex justify-center items-center">
+                  <span class="text-black font-extrabold text-[20px]">
+                    40
+                  </span>
+                  <span
+                    class="text-[#FF9494] font-extrabold text-[12px] align-bottom"
+                  >
+                    $
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div
+                class="px-4 py-2 border-2 border-[#C5C4C4] rounded-full hover:bg-[#FF9494]/80 font-extrabold text-sm text-[#C5C4C4]"
+              >
+                BUY NOW
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white shadow-lg p-2 rounded-lg max-h-[400px]">
+          <div class="relative">
+            <img
+              src="../assets/images/shirt3.jpeg"
+              class="h-[250px] w-full rounded-2xl"
+            />
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-9 h-9 text-[#C5C4C4] absolute top-2 right-2 rounded-full bg-white p-2 stroke-[3px]"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+              />
+            </svg>
+          </div>
+          <div class="flex m-5 justify-between">
+            <div class="flex flex-col">
+              <span class="text-black text-lg font-bold"> Smart t- Shirt </span>
+              <div class="flex gap-4">
+                <span
+                  class="text-[#C5C4C4] line-through decoration-[#FF9494] text-[13px] font-bold"
+                >
+                  100$
+                </span>
+                <div class="flex justify-center items-center">
+                  <span class="text-black font-extrabold text-[20px]">
+                    40
+                  </span>
+                  <span
+                    class="text-[#FF9494] font-extrabold text-[12px] align-bottom"
+                  >
+                    $
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div
+                class="px-4 py-2 border-2 border-[#C5C4C4] rounded-full hover:bg-[#FF9494]/80 font-extrabold text-sm text-[#C5C4C4]"
+              >
+                BUY NOW
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white shadow-lg p-2 rounded-lg max-h-[400px]">
+          <div class="relative">
+            <img
+              src="../assets/images/shirt4.webp"
+              class="h-[250px] w-full rounded-2xl"
+            />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-9 h-9 text-[#C5C4C4] absolute top-2 right-2 rounded-full bg-white p-2 stroke-[3px]"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+              />
+            </svg>
+          </div>
+          <div class="flex m-5 justify-between">
+            <div class="flex flex-col">
+              <span class="text-black text-lg font-bold"> Smart t- Shirt </span>
+              <div class="flex gap-4">
+                <span
+                  class="text-[#C5C4C4] line-through decoration-[#FF9494] text-[13px] font-bold"
+                >
+                  100$
+                </span>
+                <div class="flex justify-center items-center">
+                  <span class="text-black font-extrabold text-[20px]">
+                    40
+                  </span>
+                  <span
+                    class="text-[#FF9494] font-extrabold text-[12px] align-bottom"
+                  >
+                    $
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div
+                class="px-4 py-2 border-2 border-[#C5C4C4] rounded-full hover:bg-[#FF9494]/80 font-extrabold text-sm text-[#C5C4C4]"
+              >
+                BUY NOW
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 <script>
