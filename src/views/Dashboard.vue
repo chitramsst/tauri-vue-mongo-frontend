@@ -1106,7 +1106,7 @@
     </div>
     <!--- save $100 -->
     <div
-      class="w-full shadow-2xl rounded-3xl text-black flex px-36 py-24 gap-x-10"
+      class="w-full shadow-2xl text-black flex px-36 py-24 gap-x-10"
     >
       <div class="w-1/2 flex rounded-3xl bg-[#F2F2E5]">
         <div class="w-1/2 h-full p-7">
@@ -1191,7 +1191,7 @@
     </div>
     <!--- explore -->
     <div
-      class="w-full shadow-2xl bg-white rounded-3xl text-black flex px-36 py-24 gap-x-10"
+      class="w-full bg-gradient-to-b from-white to-[#F8F8F8] text-black flex px-36 py-24 gap-x-10"
     >
       <div
         class="w-1/4 flex rounded-xl bg-[url('/src/assets/images/baby.png')] bg-no-repeat bg-cover"
@@ -1229,9 +1229,9 @@
           </div>
         </div>
       </div>
-      <div class="w-3/4 flex rounded-3xl bg-[#FFEEEA]">
+      <div class="w-3/4 flex  bg-[#FFEEEA]">
         <div class="w-full bg-white">
-          <div class="flex justify-between items-center w-full px-36">
+          <div class="flex justify-between items-center w-full">
             <span class="text-black text-[40px] font-bold">
               Best Seller Products</span
             >
@@ -1566,6 +1566,124 @@
           </div>
         </div>
       </div>
+    </div>
+    <!-- free returns -->
+    <div class="bg-white">
+      <div class="px-36 mt-[10px] py-5">
+        <div class="grid grid-cols-4 my-7 gap-7">
+          <div class="bg-white rounded-lg flex items-center justify-center">
+            <img
+              src="/src/assets/images/logo1.png"
+              class="rounded-full h-16 w-16 object-cover"
+            />
+            
+
+
+            <!-- #f0840f -->
+
+            <div class="flex m-5 justify-between">
+              <div class="flex flex-col">
+                <span class="text-black text-lg font-bold"> Free Returns </span>
+                <div class="flex gap-4">
+                  <span class="text-[#C5C4C4] text-[13px] font-bold text-black/50"
+                    >No questions asked return policy
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-lg flex items-center justify-center">
+            <img
+              src="/src/assets/images/logo2.png"
+              class="rounded-full h-16 w-16 object-cover"
+            />
+            <div class="flex m-5 justify-between">
+              <div class="flex flex-col">
+                <span class="text-black text-lg font-bold"> Money Guarantee </span>
+                <div class="flex gap-4">
+                  <span class="text-[#C5C4C4] text-[13px] font-bold text-black/50"
+                    > 30 days money back
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-lg flex items-center justify-center">
+            <svg class="h-20 w-20 rounded-full bg-[#3EC0CF]/20 p-5 stroke-[1px]" fill="#3EC0CF" height="200px" width="200px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 279.525 279.525" xml:space="preserve" stroke="#3EC0CF"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M165.066,1.544c-29.272,0-56.007,11.05-76.268,29.191c4.494,7.146,7.047,15.46,7.287,24.042l0.001,0.025l0.001,0.025 c0.102,3.867,0.333,7.735,0.664,11.597c15.368-21.117,40.258-34.88,68.315-34.88c46.571,0,84.459,37.888,84.459,84.459 c0,46.08-37.098,83.634-82.994,84.422c4.191,3.502,8.518,6.84,12.976,9.974l0.02,0.015l0.021,0.014 c6.07,4.282,11.014,9.896,14.483,16.317c49.133-12.861,85.493-57.633,85.493-110.742C279.525,52.89,228.18,1.544,165.066,1.544z"></path> <path d="M162.256,234.942c-13.076-10.438-21.234-17.389-32.909-28.204c-3.435-3.182-7.633-5.164-11.944-5.164 c-3.299,0-6.557,1.051-9.239,3.252c-2.768,2.33-5.536,4.66-8.305,6.989c-22.499-26.738-39.206-57.895-49.027-91.431 c3.472-1.016,6.945-2.033,10.417-3.049c7.652-2.343,11.252-10.512,10.129-18.701c-2.443-17.824-3.77-26.679-5.282-43.018 c-0.775-8.375-6.349-15.65-14.338-16.085c-1.246-0.121-2.491-0.181-3.726-0.181c-29.71,0-55.578,34.436-46.009,76.564 c11.907,52.172,37.684,100.243,74.551,139.031c15.102,15.856,33.603,23.036,50.312,23.036c17.627,0,33.261-7.984,40.833-22.195 C171.778,248.891,168.83,240.19,162.256,234.942z"></path> <path d="M130.645,118.121c-7.912,7.341-13.089,13.113-15.823,17.643c-1.93,3.195-3.338,6.573-4.187,10.04 c-0.399,1.632-0.032,3.326,1.007,4.649c1.038,1.321,2.596,2.079,4.276,2.079h37.758c4.626,0,8.39-3.764,8.39-8.39 c0-4.626-3.764-8.39-8.39-8.39h-17.051c0.139-0.164,0.282-0.328,0.428-0.493c1.114-1.254,3.842-3.874,8.107-7.785 c4.473-4.105,7.493-7.179,9.232-9.398c2.621-3.336,4.571-6.593,5.794-9.679c1.247-3.145,1.88-6.498,1.88-9.967 c0-6.224-2.254-11.507-6.699-15.705c-4.416-4.164-10.495-6.274-18.071-6.274c-6.884,0-12.731,1.802-17.377,5.356 c-2.803,2.146-4.961,5.119-6.415,8.839c-0.982,2.513-0.728,5.388,0.68,7.689c1.408,2.302,3.852,3.837,6.537,4.105 c0.299,0.03,0.597,0.045,0.891,0.045c3.779,0,7.149-2.403,8.387-5.979c0.388-1.121,0.901-2.012,1.527-2.65 c1.318-1.343,3.093-1.997,5.428-1.997c2.373,0,4.146,0.618,5.418,1.889c1.269,1.269,1.886,3.12,1.886,5.66 c0,2.359-0.843,4.819-2.505,7.314C140.862,108.028,138.199,111.083,130.645,118.121z"></path> <path d="M206.235,76.451h-6.307c-1.797,0-3.475,0.886-4.489,2.37l-29.168,42.698c-0.851,1.246-1.301,2.703-1.301,4.212v6.919 c0,2.997,2.439,5.436,5.436,5.436h23.945v5.787c0,4.775,3.885,8.66,8.66,8.66c4.775,0,8.66-3.885,8.66-8.66v-5.787h0.865 c4.437,0,8.047-3.61,8.047-8.047c0-4.437-3.61-8.047-8.047-8.047h-0.865V81.887C211.671,78.89,209.232,76.451,206.235,76.451z M194.352,121.992h-10.748l10.748-15.978V121.992z"></path> </g> </g></svg>
+            <div class="flex m-5 justify-between">
+              <div class="flex flex-col">
+                <span class="text-black text-lg font-bold"> 24/7 Support </span>
+                <div class="flex gap-4">
+                  <span class="text-[#C5C4C4] text-[13px] font-bold text-black/50"
+                    >Friendly 24/7 Support
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-lg flex items-center justify-center">
+            <img
+              src="/src/assets/images/logo4.png"
+              class="rounded-full h-16 w-16 object-cover"
+            />
+            <div class="flex m-5 justify-between">
+              <div class="flex flex-col">
+                <span class="text-black text-lg font-bold"> Secure Payment </span>
+                <div class="flex gap-4">
+                  <span class="text-[#C5C4C4] text-[13px] font-bold text-black/50"
+                    >All cards accepted
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bg-black text-white/70 flex space-x-28 justify-between py-10 px-36">
+     <div class="2/6 flex flex-col">
+      <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      class="w-12 h-12 stroke-[2px]"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z"
+      />
+    </svg>
+    <p class="w-[370px] text-xl py-5 justify-center align-middle">
+      Looking for an e-commerce website? we offer a turn key e-commerce website with the latest technology. Get  your online store today !
+    </p>
+     </div>
+     <div class="flex gap-2 flex-col w-1/6">
+      <span class="text-xl font-bold"> Home </span>
+      <span> Discover </span>
+      <span> Explore </span>
+      <span> Join </span>
+     </div>
+     <div class="flex gap-2 flex-col w-1/6">
+      <span class="text-xl font-bold"> Company </span>
+      <span> Corporation </span>
+      <span> Fashions </span>
+      <span> About Us </span>
+     </div>
+     <div class="flex gap-2 flex-col w-1/6">
+      <span class="text-xl font-bold"> Features </span>
+      <span> Shop </span>
+      <span> Cart </span>
+      <span> Notification </span>
+      <span> Sale </span>
+     </div>
+     <div class="flex gap-2 flex-col w-1/6">
+      <span class="text-xl font-bold"> Contact Us </span>
+      <span> Privacy and Policy </span>
+      <span> +009-852-693 </span>
+     </div>
     </div>
   </div>
 </template>
