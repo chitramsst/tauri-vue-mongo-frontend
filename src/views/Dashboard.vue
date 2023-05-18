@@ -478,9 +478,9 @@
     </div>
     <div class="px-36 mt-[200px]">
       <span class="text-black text-[40px] font-bold"> Choose By Brand</span>
-      <div class="flex my-7 gap-7">
+      <div class="grid grid-cols-4 my-7 gap-7">
         <div
-          class="w-1/4 bg-white shadow-lg rounded-lg flex items-center justify-center"
+          class="bg-white shadow-lg rounded-lg flex items-center justify-center"
         >
           <svg
             width="200"
@@ -533,9 +533,12 @@
           </div>
         </div>
         <div
-          class="w-1/4 bg-white shadow-lg rounded-lg flex items-center justify-center"
+          class="bg-white shadow-lg rounded-lg flex items-center justify-center"
         >
-          <img src="/src/assets/images/latio.png" class="rounded-full h-20 w-20 object-cover"/>
+          <img
+            src="/src/assets/images/latio.png"
+            class="rounded-full h-20 w-20 object-cover"
+          />
           <div class="flex m-5 justify-between">
             <div class="flex flex-col">
               <span class="text-black text-lg font-bold"> Latio </span>
@@ -548,35 +551,113 @@
           </div>
         </div>
         <div
-        class="w-1/4 bg-white shadow-lg rounded-lg flex items-center justify-center"
-      >
-      <img src="/src/assets/images/piola.png" class="rounded-full h-20 w-20 object-cover"/>
-        <div class="flex m-5 justify-between">
-          <div class="flex flex-col">
-            <span class="text-black text-lg font-bold"> Piola </span>
-            <div class="flex gap-4">
-              <span class="text-[#C5C4C4] text-[17px] font-bold"
-                >Delivery within 24 hour
-              </span>
+          class="bg-white shadow-lg rounded-lg flex items-center justify-center"
+        >
+          <img
+            src="/src/assets/images/piola.png"
+            class="rounded-full h-20 w-20 object-cover"
+          />
+          <div class="flex m-5 justify-between">
+            <div class="flex flex-col">
+              <span class="text-black text-lg font-bold"> Piola </span>
+              <div class="flex gap-4">
+                <span class="text-[#C5C4C4] text-[17px] font-bold"
+                  >Delivery within 24 hour
+                </span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div
-      class="w-1/4 bg-white shadow-lg rounded-lg flex items-center justify-center"
-    >
-    <img src="/src/assets/images/puma.png" class="rounded-full h-20 w-20 object-cover"/>
-      <div class="flex m-5 justify-between">
-        <div class="flex flex-col">
-          <span class="text-black text-lg font-bold"> Puma </span>
-          <div class="flex gap-4">
-            <span class="text-[#C5C4C4] text-[17px] font-bold"
-              >Delivery within 24 hour
-            </span>
+        <div
+          class="bg-white shadow-lg rounded-lg flex items-center justify-center"
+        >
+          <img
+            src="/src/assets/images/puma.png"
+            class="rounded-full h-20 w-20 object-cover"
+          />
+          <div class="flex m-5 justify-between">
+            <div class="flex flex-col">
+              <span class="text-black text-lg font-bold"> Puma </span>
+              <div class="flex gap-4">
+                <span class="text-[#C5C4C4] text-[17px] font-bold"
+                  >Delivery within 24 hour
+                </span>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
+        <div
+          class="bg-white shadow-lg rounded-lg flex items-center justify-center"
+        >
+          <img
+            src="/src/assets/images/logo1.png"
+            class="rounded-full h-20 w-20 object-cover"
+          />
+          <div class="flex m-5 justify-between">
+            <div class="flex flex-col">
+              <span class="text-black text-lg font-bold"> Butilaha </span>
+              <div class="flex gap-4">
+                <span class="text-[#C5C4C4] text-[17px] font-bold"
+                  >Delivery within 24 hour
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="bg-white shadow-lg rounded-lg flex items-center justify-center"
+        >
+          <img
+            src="/src/assets/images/logo2.png"
+            class="rounded-full h-20 w-20 object-cover"
+          />
+          <div class="flex m-5 justify-between">
+            <div class="flex flex-col">
+              <span class="text-black text-lg font-bold"> Lahtuio </span>
+              <div class="flex gap-4">
+                <span class="text-[#C5C4C4] text-[17px] font-bold"
+                  >Delivery within 24 hour
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="bg-white shadow-lg rounded-lg flex items-center justify-center"
+        >
+          <img
+            src="/src/assets/images/logo3.jpeg"
+            class="rounded-full h-20 w-20 object-cover"
+          />
+          <div class="flex m-5 justify-between">
+            <div class="flex flex-col">
+              <span class="text-black text-lg font-bold"> Nauhtiaya </span>
+              <div class="flex gap-4">
+                <span class="text-[#C5C4C4] text-[17px] font-bold"
+                  >Delivery within 24 hour
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="bg-white shadow-lg rounded-lg flex items-center justify-center"
+        >
+          <img
+            src="/src/assets/images/logo4.png"
+            class="rounded-full h-20 w-20 object-cover"
+          />
+          <div class="flex m-5 justify-between">
+            <div class="flex flex-col">
+              <span class="text-black text-lg font-bold"> Mialkija </span>
+              <div class="flex gap-4">
+                <span class="text-[#C5C4C4] text-[17px] font-bold"
+                  >Delivery within 24 hour
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
