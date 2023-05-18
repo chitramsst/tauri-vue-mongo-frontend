@@ -240,8 +240,8 @@
       </div>
     </div>
   </div>
-  <div class="w-full bg-white px-36 py-20">
-    <div class="flex justify-between items-center">
+  <div class="w-full bg-white px-36 py-20 h-[400px]">
+    <div class="flex justify-between items-center w-full">
       <span class="text-black text-[40px] font-bold">
         Our best seller product</span
       >
@@ -265,7 +265,7 @@
         </span>
       </button>
     </div>
-    <div class="flex gap-x-7 w-full pt-7">
+    <div class="flex gap-x-7 w-full pt-7 ">
       <div class="w-1/4 bg-white shadow-lg p-2 rounded-lg max-h-[400px]">
         <div class="relative">
           <img
