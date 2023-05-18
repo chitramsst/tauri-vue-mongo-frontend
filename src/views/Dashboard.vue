@@ -476,11 +476,11 @@
         </div>
       </div>
     </div>
-    <div class="px-36 mt-[200px]">
+    <div class="px-36 mt-[200px] py-28">
       <span class="text-black text-[40px] font-bold"> Choose By Brand</span>
       <div class="grid grid-cols-4 my-7 gap-7">
         <div
-          class="bg-white shadow-lg rounded-lg flex items-center justify-center"
+          class="bg-white rounded-lg flex items-center justify-center"
         >
           <svg
             width="200"
@@ -533,7 +533,7 @@
           </div>
         </div>
         <div
-          class="bg-white shadow-lg rounded-lg flex items-center justify-center"
+          class="bg-white rounded-lg flex items-center justify-center"
         >
           <img
             src="/src/assets/images/latio.png"
@@ -551,7 +551,7 @@
           </div>
         </div>
         <div
-          class="bg-white shadow-lg rounded-lg flex items-center justify-center"
+          class="bg-white rounded-lg flex items-center justify-center"
         >
           <img
             src="/src/assets/images/piola.png"
@@ -569,7 +569,7 @@
           </div>
         </div>
         <div
-          class="bg-white shadow-lg rounded-lg flex items-center justify-center"
+          class="bg-white rounded-lg flex items-center justify-center"
         >
           <img
             src="/src/assets/images/puma.png"
@@ -587,7 +587,7 @@
           </div>
         </div>
         <div
-          class="bg-white shadow-lg rounded-lg flex items-center justify-center"
+          class="bg-white rounded-lg flex items-center justify-center"
         >
           <img
             src="/src/assets/images/logo1.png"
@@ -605,7 +605,7 @@
           </div>
         </div>
         <div
-          class="bg-white shadow-lg rounded-lg flex items-center justify-center"
+          class="bg-white rounded-lg flex items-center justify-center"
         >
           <img
             src="/src/assets/images/logo2.png"
@@ -623,7 +623,7 @@
           </div>
         </div>
         <div
-          class="bg-white shadow-lg rounded-lg flex items-center justify-center"
+          class="bg-white rounded-lg flex items-center justify-center"
         >
           <img
             src="/src/assets/images/logo3.jpeg"
@@ -641,7 +641,7 @@
           </div>
         </div>
         <div
-          class="bg-white shadow-lg rounded-lg flex items-center justify-center"
+          class="bg-white rounded-lg flex items-center justify-center"
         >
           <img
             src="/src/assets/images/logo4.png"
@@ -686,7 +686,7 @@
         <div class="bg-white shadow-lg p-2 rounded-lg max-h-[400px]">
           <div class="relative">
             <img
-              src="../assets/images/shirt.jpeg"
+              src="../assets/images/coat1.jpeg"
               class="h-[250px] w-full rounded-2xl"
             />
 
@@ -790,7 +790,7 @@
         <div class="bg-white shadow-lg p-2 rounded-lg max-h-[400px]">
           <div class="relative">
             <img
-              src="../assets/images/shirt3.jpeg"
+              src="../assets/images/coat3.jpeg"
               class="h-[250px] w-full rounded-2xl"
             />
 
@@ -842,7 +842,7 @@
         <div class="bg-white shadow-lg p-2 rounded-lg max-h-[400px]">
           <div class="relative">
             <img
-              src="../assets/images/shirt4.webp"
+              src="../assets/images/shirt5.webp"
               class="h-[250px] w-full rounded-2xl"
             />
             <svg
