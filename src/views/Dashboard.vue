@@ -479,9 +479,7 @@
     <div class="px-36 mt-[200px] py-28">
       <span class="text-black text-[40px] font-bold"> Choose By Brand</span>
       <div class="grid grid-cols-4 my-7 gap-7">
-        <div
-          class="bg-white rounded-lg flex items-center justify-center"
-        >
+        <div class="bg-white rounded-lg flex items-center justify-center">
           <svg
             width="200"
             height="200"
@@ -532,9 +530,7 @@
             </div>
           </div>
         </div>
-        <div
-          class="bg-white rounded-lg flex items-center justify-center"
-        >
+        <div class="bg-white rounded-lg flex items-center justify-center">
           <img
             src="/src/assets/images/latio.png"
             class="rounded-full h-20 w-20 object-cover"
@@ -550,9 +546,7 @@
             </div>
           </div>
         </div>
-        <div
-          class="bg-white rounded-lg flex items-center justify-center"
-        >
+        <div class="bg-white rounded-lg flex items-center justify-center">
           <img
             src="/src/assets/images/piola.png"
             class="rounded-full h-20 w-20 object-cover"
@@ -568,9 +562,7 @@
             </div>
           </div>
         </div>
-        <div
-          class="bg-white rounded-lg flex items-center justify-center"
-        >
+        <div class="bg-white rounded-lg flex items-center justify-center">
           <img
             src="/src/assets/images/puma.png"
             class="rounded-full h-20 w-20 object-cover"
@@ -586,9 +578,7 @@
             </div>
           </div>
         </div>
-        <div
-          class="bg-white rounded-lg flex items-center justify-center"
-        >
+        <div class="bg-white rounded-lg flex items-center justify-center">
           <img
             src="/src/assets/images/logo1.png"
             class="rounded-full h-20 w-20 object-cover"
@@ -604,9 +594,7 @@
             </div>
           </div>
         </div>
-        <div
-          class="bg-white rounded-lg flex items-center justify-center"
-        >
+        <div class="bg-white rounded-lg flex items-center justify-center">
           <img
             src="/src/assets/images/logo2.png"
             class="rounded-full h-20 w-20 object-cover"
@@ -622,9 +610,7 @@
             </div>
           </div>
         </div>
-        <div
-          class="bg-white rounded-lg flex items-center justify-center"
-        >
+        <div class="bg-white rounded-lg flex items-center justify-center">
           <img
             src="/src/assets/images/logo3.jpeg"
             class="rounded-full h-20 w-20 object-cover"
@@ -640,9 +626,7 @@
             </div>
           </div>
         </div>
-        <div
-          class="bg-white rounded-lg flex items-center justify-center"
-        >
+        <div class="bg-white rounded-lg flex items-center justify-center">
           <img
             src="/src/assets/images/logo4.png"
             class="rounded-full h-20 w-20 object-cover"
@@ -662,25 +646,45 @@
     </div>
     <div class="w-full bg-white py-20">
       <div class="flex justify-between items-center w-full px-36">
-        <span class="text-black text-[40px] font-bold">
-          Popular Product</span
-        >
-       <div class="flex justify-center items-center gap-4">
-        <button class="bg-[#F8F8F8] px-4 py-4 rounded-full shadow-none">
-          <span class="flex items-center gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-[#C5C4C4]">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-            </svg>            
-          </span>
-        </button>
-        <button class="bg-[#FF9494] px-4 py-4 rounded-full shadow-none">
-          <span class="flex items-center gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-            </svg>
-          </span>
-        </button>
-      </div>
+        <span class="text-black text-[40px] font-bold"> Popular Product</span>
+        <div class="flex justify-center items-center gap-4">
+          <button class="bg-[#F8F8F8] px-4 py-4 rounded-full shadow-none">
+            <span class="flex items-center gap-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6 text-[#C5C4C4]"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15.75 19.5L8.25 12l7.5-7.5"
+                />
+              </svg>
+            </span>
+          </button>
+          <button class="bg-[#FF9494] px-4 py-4 rounded-full shadow-none">
+            <span class="flex items-center gap-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
       </div>
       <div class="grid grid-cols-4 gap-7 w-full pt-7 px-36">
         <div class="bg-white shadow-lg p-2 rounded-lg max-h-[400px]">
@@ -890,7 +894,7 @@
             </div>
           </div>
         </div>
-           <div class="bg-white shadow-lg p-2 rounded-lg max-h-[400px]">
+        <div class="bg-white shadow-lg p-2 rounded-lg max-h-[400px]">
           <div class="relative">
             <img
               src="../assets/images/shirt.jpeg"
@@ -1096,6 +1100,81 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+    <!--- save $100 -->
+    <div
+      class="w-full shadow-2xl rounded-3xl text-black flex px-36 py-24 gap-x-10"
+    >
+      <div class="w-1/2 flex rounded-lg bg-[#F2F2E5]">
+        <div class="w-1/2 h-full p-7">
+          <div class="text-xl font-extrabold leading-snug">Save</div>
+          <div class="text-5xl font-extrabold leading-snug">$100</div>
+          <p class="w-70 mt-3 mb-10">
+           <span class="text-lg font-bold opacity-50"> We are small family Business in Europe who love to make exceptional
+            printed products!
+           </span>
+          </p>
+          <div class="">
+            <button class="bg-[#FF9494] px-4 py-3 rounded-full">
+              <span class="flex items-center gap-2">
+                <span class="font-medium text-xl"> Shop Now</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-3 h-3 stroke-[4px]"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+        </div>
+        <div class="w-1/2 h-full">
+          <img src="/src/assets/images/save1.jpg" class="rounded-r-lg h-[350px] w-full">
+        </div>
+      </div>
+      <div class="w-1/2 flex rounded-lg bg-[#FFEEEA]">
+        <div class="w-1/2 h-full p-7">
+          <div class="text-xl font-extrabold leading-snug">Save</div>
+          <div class="text-5xl font-extrabold leading-snug">$100</div>
+          <p class="w-70 mt-3 mb-10">
+           <span class="text-lg font-bold opacity-50"> We are small family Business in Europe who love to make exceptional
+            printed products!
+           </span>
+          </p>
+          <div class="">
+            <button class="bg-[#FF9494] px-4 py-3 rounded-full">
+              <span class="flex items-center gap-2">
+                <span class="font-medium text-xl"> Shop Now</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-3 h-3 stroke-[4px]"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+        </div>
+        <div class="w-1/2 h-full">
+          <img src="/src/assets/images/save2.jpeg" class="rounded-r-lg h-[350px] w-full">
         </div>
       </div>
     </div>
