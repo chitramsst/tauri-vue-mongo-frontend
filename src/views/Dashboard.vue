@@ -1107,7 +1107,7 @@
     <div
       class="w-full shadow-2xl rounded-3xl text-black flex px-36 py-24 gap-x-10"
     >
-      <div class="w-1/2 flex rounded-lg bg-[#F2F2E5]">
+      <div class="w-1/2 flex rounded-3xl bg-[#F2F2E5]">
         <div class="w-1/2 h-full p-7">
           <div class="text-xl font-extrabold leading-snug">Save</div>
           <div class="text-5xl font-extrabold leading-snug">$100</div>
@@ -1139,13 +1139,13 @@
           </div>
         </div>
         <div class="w-1/2 h-full">
-          <img src="/src/assets/images/save1.jpg" class="rounded-r-lg h-[350px] w-full">
+          <img src="/src/assets/images/save1.jpg" class="rounded-r-3xl h-[350px] w-full">
         </div>
       </div>
-      <div class="w-1/2 flex rounded-lg bg-[#FFEEEA]">
+      <div class="w-1/2 flex rounded-3xl bg-[#FFEEEA]">
         <div class="w-1/2 h-full p-7">
           <div class="text-xl font-extrabold leading-snug">Save</div>
-          <div class="text-5xl font-extrabold leading-snug">$100</div>
+          <div class="text-5xl font-extrabold leading-snug text-red-600">$89</div>
           <p class="w-70 mt-3 mb-10">
            <span class="text-lg font-bold opacity-50"> We are small family Business in Europe who love to make exceptional
             printed products!
@@ -1174,7 +1174,7 @@
           </div>
         </div>
         <div class="w-1/2 h-full">
-          <img src="/src/assets/images/save2.jpeg" class="rounded-r-lg h-[350px] w-full">
+          <img src="/src/assets/images/save2.jpeg" class="rounded-r-3xl h-[350px] w-full">
         </div>
       </div>
     </div>
