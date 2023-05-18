@@ -1112,9 +1112,10 @@
           <div class="text-xl font-extrabold leading-snug">Save</div>
           <div class="text-5xl font-extrabold leading-snug">$100</div>
           <p class="w-70 mt-3 mb-10">
-           <span class="text-lg font-bold opacity-50"> We are small family Business in Europe who love to make exceptional
-            printed products!
-           </span>
+            <span class="text-lg font-bold opacity-50">
+              We are small family Business in Europe who love to make
+              exceptional printed products!
+            </span>
           </p>
           <div class="">
             <button class="bg-[#FF9494] px-4 py-3 rounded-full">
@@ -1139,17 +1140,23 @@
           </div>
         </div>
         <div class="w-1/2 h-full">
-          <img src="/src/assets/images/save1.jpg" class="rounded-r-3xl h-[350px] w-full">
+          <img
+            src="/src/assets/images/save1.jpg"
+            class="rounded-r-3xl h-[350px] w-full"
+          />
         </div>
       </div>
       <div class="w-1/2 flex rounded-3xl bg-[#FFEEEA]">
         <div class="w-1/2 h-full p-7">
           <div class="text-xl font-extrabold leading-snug">Save</div>
-          <div class="text-5xl font-extrabold leading-snug text-red-600">$89</div>
+          <div class="text-5xl font-extrabold leading-snug text-red-600">
+            $89
+          </div>
           <p class="w-70 mt-3 mb-10">
-           <span class="text-lg font-bold opacity-50"> We are small family Business in Europe who love to make exceptional
-            printed products!
-           </span>
+            <span class="text-lg font-bold opacity-50">
+              We are small family Business in Europe who love to make
+              exceptional printed products!
+            </span>
           </p>
           <div class="">
             <button class="bg-[#FF9494] px-4 py-3 rounded-full">
@@ -1174,7 +1181,92 @@
           </div>
         </div>
         <div class="w-1/2 h-full">
-          <img src="/src/assets/images/save2.jpeg" class="rounded-r-3xl h-[350px] w-full">
+          <img
+            src="/src/assets/images/save2.jpeg"
+            class="rounded-r-3xl h-[350px] w-full"
+          />
+        </div>
+      </div>
+    </div>
+    <!--- explore -->
+    <div
+      class="w-full shadow-2xl bg-white rounded-3xl text-black flex px-36 py-24 gap-x-10"
+    >
+      <div
+        class="w-2/6 flex rounded-xl bg-[url('/src/assets/images/baby.png')] h-[800px] bg-no-repeat bg-cover rounded-lg"
+      >
+                <div class="flex flex-col pt-[100px] p-10 backdrop-blur-sm h-1/2">
+          <div class="text-4xl font-extrabold leading-snug text-white">
+            Explore Our Best Selling Product
+          </div>
+          <p class="w-70 mt-3 mb-10">
+            <span class="text-lg font-bold opacity-60 text-white">
+              We are small family Business in Europe who love to make
+              exceptional printed products!
+            </span>
+          </p>
+          <div class="">
+            <button class="bg-[#FF9494] px-4 py-3 rounded-full">
+              <span class="flex items-center gap-2">
+                <span class="font-medium text-xl"> Buy Now</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-3 h-3 stroke-[4px]"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="w-4/6 flex rounded-3xl bg-[#FFEEEA]">
+        <div class="w-1/2 h-full p-7">
+          <div class="text-xl font-extrabold leading-snug">Save</div>
+          <div class="text-5xl font-extrabold leading-snug text-red-600">
+            $89
+          </div>
+          <p class="w-70 mt-3 mb-10">
+            <span class="text-lg font-bold opacity-50">
+              We are small family Business in Europe who love to make
+              exceptional printed products!
+            </span>
+          </p>
+          <div class="">
+            <button class="bg-[#FF9494] px-4 py-3 rounded-full">
+              <span class="flex items-center gap-2">
+                <span class="font-medium text-xl"> Shop Now</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-3 h-3 stroke-[4px]"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+        </div>
+        <div class="w-1/2 h-full">
+          <img
+            src="/src/assets/images/save2.jpeg"
+            class="rounded-r-3xl h-[350px] w-full"
+          />
         </div>
       </div>
     </div>
