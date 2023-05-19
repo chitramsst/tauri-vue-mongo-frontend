@@ -1147,7 +1147,7 @@
           />
         </div>
       </div>
-      <div class="w-1/2 flex rounded-3xl bg-[#FFEEEA]">
+      <div class="w-1/2 flex rounded-3xl bg-[#DF8F95]/20">
         <div class="w-1/2 h-full p-7">
           <div class="text-xl font-extrabold leading-snug">Save</div>
           <div class="text-5xl font-extrabold leading-snug text-red-600">
