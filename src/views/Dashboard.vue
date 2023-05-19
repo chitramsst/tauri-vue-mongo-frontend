@@ -1194,7 +1194,7 @@
       class="w-full bg-gradient-to-b from-white to-[#F8F8F8] text-black flex px-36 py-24 gap-x-10"
     >
       <div
-        class="w-1/4 flex rounded-xl bg-[url('/src/assets/images/baby.png')] bg-no-repeat bg-cover"
+        class="w-1/4 flex rounded-3xl bg-[url('/src/assets/images/baby.png')] bg-no-repeat bg-cover"
       >
         <div class="flex flex-col pt-[100px] p-10 backdrop-blur-sm h-1/2">
           <div class="text-4xl font-extrabold leading-snug text-white">
@@ -1233,7 +1233,7 @@
         <div class="w-full bg-white">
           <div class="flex justify-between items-center w-full">
             <span class="text-black text-[40px] font-bold">
-              Best Seller Products</span
+              BestSeller Products</span
             >
             <div class="flex justify-center items-center gap-4">
               <button class="bg-transparent px-4 py-4 rounded-full shadow-none">
@@ -1273,6 +1273,13 @@
                 </span>
               </button>
             </div>
+          </div>
+          
+          <div class="border-b-[0.5px] border-black/10"> 
+            <ul class="flex flex-wrap gap-10 pt-3">
+              <li class="inline-block font-semibold text-xl text-[#FF9494] border-b-2 border-[#FF9494]"> Popular All Time </li>
+              <li class="text-xl pb-3 text-black/60 hover:border-b-2 hover:border-[#FF9494] hover:text-[#FF9494]"> Check of this month</li>
+            </ul>
           </div>
           <div class="grid grid-cols-3 gap-7 w-full pt-7">
             <div class="bg-white shadow-lg p-2 rounded-lg max-h-[400px]">
