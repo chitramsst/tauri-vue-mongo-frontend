@@ -25,6 +25,15 @@ const loginRouter = createRouter({
       requiresAuth: true
     }
 },
+,
+  {
+    path : '/category',
+    name : 'category',
+    component : () => import('../views/Category.vue'),
+    meta: {
+      requiresAuth: true
+    }
+},
   ], 
 })
 

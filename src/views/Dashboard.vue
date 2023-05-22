@@ -36,7 +36,7 @@
         ></a
       >
       <a
-        href="#"
+        @click="$router.push({name:'category'})"
         class="p-4 text-white hover:bg-gray-700 font-bold text-md flex flex-row justify-left items-center space-x-5"
       >
         <svg
