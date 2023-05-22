@@ -136,7 +136,7 @@
                 <input type="text" class="h-15 w-[25%] rounded-xl focus:border-stone-500 focus:ring-0 focus:inline-block text-xl text-black/50" placeholder="Enter name"/>        
                 </div>
                  <div class="flex items-center justify-end w-full p-10 space-x-10">
-                <button class="rounded-xl px-10 font-bold text-md bg-blue-800">
+                <button class="rounded-xl px-10 font-bold text-md bg-gray-800">
                 Save
              </button>
              <button class="rounded-xl px-10 font-bold text-md bg-red-800">
