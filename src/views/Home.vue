@@ -174,7 +174,6 @@
               </div>
             </div>
         </div>
-
       </div>
     </div>
     <div class="w-full px-36 h-full">
@@ -292,7 +291,6 @@
               src="../assets/images/shirt.jpeg"
               class="h-[250px] w-full rounded-2xl"
             />
-
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
