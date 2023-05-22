@@ -25,7 +25,7 @@ const loginRouter = createRouter({
       requiresAuth: true
     }
 },
-,
+
   {
     path : '/category',
     name : 'category',
@@ -34,6 +34,17 @@ const loginRouter = createRouter({
       requiresAuth: true
     }
 },
+
+
+{
+  path : '/product',
+  name : 'product',
+  component : () => import('../views/Product.vue'),
+  meta: {
+    requiresAuth: true
+  }
+},
+
   ], 
 })
 

@@ -14,7 +14,7 @@
         />
       </div>
       <a
-        href="#"
+      @click="$router.push({name:'dashboard'})"
         class="p-4 text-white bg-gray-700 hover:bg-gray-700 font-bold text-md flex flex-row justify-left items-center space-x-5"
       >
         <svg
@@ -56,7 +56,7 @@
         <span class="flex items-center justify-center h-full">Category</span></a
       >
       <a
-        href="#"
+      @click="$router.push({name:'product'})"
         class="p-4 text-white hover:bg-gray-700 font-bold text-md flex flex-row justify-left items-center space-x-5"
       >
         <svg
