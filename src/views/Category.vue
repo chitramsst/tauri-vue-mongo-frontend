@@ -2,7 +2,7 @@
     <div class="w-full mx-auto flex flex-row">
       <div
         class="inset-y-0 w-64 bg-gray-900 transition-opacity bg-opacity-75 fixed block bg-gradient-to-bl from-gray-900/75 to-gray-400"
-        v-if="sidebarVisibility"
+        v-if="sidebarVisibility" 
       >
         <div
           class="justify-center flex items-center p-4 border-b-[0.01px] border-black"
@@ -98,10 +98,10 @@
       </div>
       <div
         class="w-full text-black "
-        :class="sidebarVisibility ? 'ml-64' : ''"
+        :class="sidebarVisibility ? 'ml-64' : 'ml-30'"
       >
         <div
-          class="h-20 bg-gray-900 bg-opacity-75 text-slate-400 justify-left items-center flex bg-gradient-to-r from-gray-900/75 to-gray-400"
+          class="h-20 bg-gray-900 bg-opacity-75 text-slate-400 justify-left items-center flex bg-gradient-to-r from-gray-900/75 to-gray-400 p-5"
         >
           <svg
             fill="none"
@@ -129,7 +129,7 @@
                 <h1 class="w-full text-left p-5 text-2xl font-bold text-black/50"> Category Management </h1>   
                 <div class="flex flex-col w-full m-5 space-y-5">
                 <lable class="text-black/50 font-medium text-xl"> Name </lable>
-                <input type="text" class="h-15 w-[25%] rounded-xl focus:border-stone-500 focus:ring-0 focus:inline-block text-xl text-black/50" placeholder="Enter name"/>        
+                <input type="text" class="h-15 w-[25%] rounded-xl focus:border-stone-500 focus:ring-0 focus:inline-block text-xl text-black/50" placeholder="nter name"/>        
                 </div>
                  <div class="flex items-center justify-end w-full p-10 space-x-10">
                 <button class="rounded-xl px-10 font-bold text-md bg-blue-800">
