@@ -1,92 +1,54 @@
-<script>
-import { Modal } from "bootstrap";
-export default {
-    data(){
-        return{
-        modelObj: ''
-        }
-    },
-    mounted(){
-    
-    },
-    methods:{
-    show(){
-        this.modelObj = new Modal(document.getElementById('modal_demo'));
-        this.modelObj.show()
-    
-    },
-    hide(){
-        this.modelObj.hide()
-    }
-    }
-}
-// defineProps({
-//   title: {
-//     type: String,
-//     default: "<<Title goes here>>",
-//   },
-// });
-// let modalEle = ref(null);
-// let thisModalObj = null;
-
-// onMounted(() => {
-//     console.log("haiu")
-//   thisModalObj = new Modal(modalEle.value);
-// });
-// function _show() {
-//   thisModalObj.show();
-// }
-// defineExpose({ show: _show });
-</script>
 
 <template>
- <transition
-      enter-active-class="transition ease-out duration-200 transform"
-      enter-from-class="opacity-0"
-      enter-to-class="opacity-100"
-      leave-active-class="transition ease-in duration-200 transform"
-      leave-from-class="opacity-100"
-      leave-to-class="opacity-0">
-  <div class="modal fade show" id="modal_demo"
- tabindex="-1" aria-labelledby="exampleModalLabel" aria-modal="true" role="dialog" 
- style="display:block">
-  <div class="modal-dialog modal-dialog-centered">
+ <div class="modal fade" id="uniqueId" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="uniqueIdlLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        
-        <button type="button" @click="OpenCloseFun()" class="btn-close" ></button>
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" @click="closeUniqueModal()">
+          <span aria-hidden="true" class="text-black">&times;</span>
+        </button>
       </div>
       <div class="modal-body">
-       <slot></slot>
+         12321
       </div>
       <div class="modal-footer">
-        <button type="button"  >{{'Close'}}</button>
-      </div>
-    </div>
-  </div>
-</div>
-    </transition>
- <!-- <div class="modal fade" id="modal_demo" tabindex="-1" data-bs-keyboard="false" data-bs-backdrop="static" ria-labelledby="modal_demo_label" aria-hidden="true" ref="modelEle">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="modal_demo_label">Modal title</h5>
-        <button type="button" class="btn-close" aria-label="Close" @click="closeModal"></button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" @click="hide()">Close</button>
+        <button type="button" class="btn btn-secondary"  @click="closeUniqueModal()">Close</button>
         <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
-</div> -->
+</div> 
 </template>
+<script>
+import { Modal } from "bootstrap";
+// //import BootstrapVue3 from 'bootstrap-vue-3'
+// import 'bootstrap/dist/css/bootstrap.css'
+// //import 'bootstrap-vue-3/dist/bootstrap-vue-3.css'
+
+export default {
+  name:"randomName",
+   data(){
+   return {uniqueModal:null}
+  },
+  mounted(){
+    this.uniqueModal = new Modal(document.getElementById('uniqueId'));
+  },
+  methods:
+  {
+   showUniqueModal() {
+   
+    this.uniqueModal.show();
+    },
+   closeUniqueModal() {
+    this.uniqueModal.hide();
+   },
+  },
+}
+</script>
 
 <!-- <style scoped>
-.modal2 {
+.modal {
   position: fixed;
   z-index: 999;
   top: 20%;
@@ -95,3 +57,9 @@ export default {
   margin-left: -150px;
 }
 </style> -->
+<!-- 
+<style scoped src="bootstrap/dist/css/bootstrap.css"></style>
+
+<style scoped src="bootstrap-vue/dist/bootstrap-vue.css"></style> -->
+
+<style scoped src="bootstrap/dist/css/bootstrap.css"></style>
