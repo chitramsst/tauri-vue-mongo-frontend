@@ -33,6 +33,7 @@ export default {
   },
   mounted(){
     this.uniqueModal = new Modal(document.getElementById('uniqueId'));
+    
   },
   methods:
   {

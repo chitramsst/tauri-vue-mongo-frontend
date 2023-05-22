@@ -5,18 +5,26 @@ const loginRouter = createRouter({
   history: createWebHashHistory(),
   routes : [
     {
-        path : '/',
+        path : '/login',
         name : 'login',
         component : () => import('../views/Login.vue')
     },
     {
-      path : '/dashboard',
-      name : 'dashboard',
-      component : () => import('../views/Dashboard.vue'),
+      path : '/',
+      name : 'home',
+      component : () => import('../views/Home.vue'),
       meta: {
         requiresAuth: true
       }
   },
+  {
+    path : '/dashboard',
+    name : 'dashboard',
+    component : () => import('../views/Dashboard.vue'),
+    meta: {
+      requiresAuth: true
+    }
+},
   ], 
 })
 
