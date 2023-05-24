@@ -25,7 +25,7 @@
                 >
                   Sign In
                 </p>
-                <div class="mb-3 w-full mt-3 w-[400px]">
+                <div class="mb-3 w-full mt-3">
                   <label
                     for="email"
                     class="block mb-2 text-xs font-medium text-white"
@@ -40,7 +40,7 @@
                     @keydown.enter="login"
                   />
                 </div>
-                <div class="mb-3 w-full mt-3 w-[400px]">
+                <div class="mb-3 w-full mt-3 ">
                   <label
                     for="password"
                     class="block mb-2 text-xs font-medium text-white"
@@ -115,7 +115,6 @@ export default {
         })
         .then(function (response) {
           if (response.data.success === true) {
-            console.log("yes");
             self.axios.defaults.headers.common["token"] =
               response.data.user.token;
             localStorage.setItem("user", JSON.stringify(response.data.user));
