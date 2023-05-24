@@ -49,8 +49,6 @@ export default {
   },
   data() {
     return {
-      showLogin: false,
-      sidebarVisibility: true,
       file: '',
       name: '',
       price: ''
