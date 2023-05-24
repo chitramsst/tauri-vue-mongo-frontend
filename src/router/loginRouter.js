@@ -7,14 +7,18 @@ const loginRouter = createRouter({
     {
         path : '/login',
         name : 'login',
-        component : () => import('../views/Login.vue')
+        component : () => import('../views/Login.vue'),
+        meta: {
+          template: 'LoginTemplate'
+        }
     },
     {
       path : '/',
       name : 'home',
       component : () => import('../views/Home.vue'),
       meta: {
-        requiresAuth: true
+        requiresAuth: true,
+        template: 'LoginTemplate'
       }
   },
   {
@@ -22,7 +26,8 @@ const loginRouter = createRouter({
     name : 'dashboard',
     component : () => import('../views/Dashboard.vue'),
     meta: {
-      requiresAuth: true
+      requiresAuth: true,
+      template: 'AdminTemplate'
     }
 },
 
@@ -31,7 +36,8 @@ const loginRouter = createRouter({
     name : 'category',
     component : () => import('../views/Category.vue'),
     meta: {
-      requiresAuth: true
+      requiresAuth: true,
+      template: 'AdminTemplate'
     }
 },
 
@@ -41,7 +47,8 @@ const loginRouter = createRouter({
   name : 'product',
   component : () => import('../views/Product.vue'),
   meta: {
-    requiresAuth: true
+    requiresAuth: true,
+    template: 'AdminTemplate'
   }
 },
 
