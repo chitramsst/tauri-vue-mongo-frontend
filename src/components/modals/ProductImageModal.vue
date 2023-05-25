@@ -44,7 +44,7 @@
           >
             Close
           </button>
-          <button type="button" class="btn btn-primary">crop</button>
+          <button type="button" class="btn btn-primary" @click="crop()">crop</button>
         </div>
       </div>
     </div>
@@ -98,19 +98,24 @@ export default {
   },
   mounted() {
     this.uniqueModal = new Modal(document.getElementById("uniqueId"));
+
+    // this.$emit('changeTitle','Awesome ')
   },
   methods: {
+    crop() {
+      const { canvas } = this.$refs.cropper.getResult();
+      canvas.toBlob((blob) => {
+        this.$emit("displayImage", blob);
+      }, this.image.type);
+    },
     loadImage(event) {
       const { files } = event.target;
-
       if (files && files[0]) {
         if (this.image.src) {
           URL.revokeObjectURL(this.image.src);
         }
         const blob = URL.createObjectURL(files[0]);
         const reader = new FileReader();
-
-        console.log("test");
         reader.onload = (e) => {
           this.image = {
             src: blob,
@@ -123,10 +128,9 @@ export default {
     },
     showUniqueModal(event) {
       this.uniqueModal.show();
-      this.$nextTick(()=>{
-      console.log(event)
-        this.loadImage(event)
-      })
+      this.$nextTick(() => {
+        this.loadImage(event);
+      });
     },
     closeUniqueModal() {
       this.uniqueModal.hide();

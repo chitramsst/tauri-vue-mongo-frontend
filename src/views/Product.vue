@@ -38,7 +38,7 @@
           </button>
         </div>
         <Teleport to="#app1">
-          <Modal ref="samplemodal"></Modal>
+          <Modal ref="samplemodal" @displayImage="showImage($event)"></Modal>
         </Teleport>
         <!-- <input
           type="file"
@@ -83,7 +83,7 @@ export default {
   },
   data() {
     return {
-      
+      file: null,
       name: "",
       price: "",
       img: "https://images.unsplash.com/photo-1600984575359-310ae7b6bdf2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80",
@@ -92,7 +92,10 @@ export default {
     };
   },
   methods: {
-    
+    showImage(blob){
+         console.log("blob" + blob)
+         this.file = blob
+    },
     reset() {
       this.image = {
         src: null,
@@ -108,12 +111,6 @@ export default {
     // 	}
     // },
 
-    // change({ coordinates, canvas }) {
-    //   console.log(coordinates, canvas);
-    // },
-    // handleFileUpload() {
-    //   this.file = this.$refs.file.files[0];
-    // },
     loadImage(event) {
       //this.$refs.samplemodal.loadImage(event)
       this.$refs.samplemodal.showUniqueModal(event);
@@ -127,38 +124,8 @@ export default {
       let formdata = new FormData();
       formdata.append("name", this.name);
       formdata.append("price", this.price);
-      if (this.image.src) {
-        const { canvas } = this.$refs.cropper.getResult();
-        let self = this;
-        var fileOfBlob = "";
-        canvas.toBlob(async (blob) => {
-          fileOfBlob = new File([blob], self.image.name);
-          formdata.append("image", fileOfBlob);
-          console.log("first" + fileOfBlob);
+      formdata.append("image",this.file,"test.jpg");
           try {
-            await this.axios
-              .post(this.$api_url + "product/save", formdata, {
-                method: "POST",
-                headers: {
-                  Token: JSON.parse(localStorage.getItem("user")).token,
-                  "Content-Type": "multipart/form-data",
-                },
-              })
-              .then((response) => {
-                // console.log(response)
-                if (response.data.success == true) {
-                  console.log("save");
-                }
-              });
-          } catch (e) {
-            console.log("kkk" + e);
-          }
-        }, this.image.type);
-        this.$nextTick(() => {
-          console.log("second" + fileOfBlob);
-        });
-      } else {
-        try {
           await this.axios
             .post(this.$api_url + "product/save", formdata, {
               method: "POST",
@@ -168,7 +135,6 @@ export default {
               },
             })
             .then((response) => {
-              // console.log(response)
               if (response.data.success == true) {
                 console.log("save");
               }
@@ -176,9 +142,7 @@ export default {
         } catch (e) {
           console.log("kkk" + e);
         }
-      }
-      // var fileOfBlob = new File([this.file], this.image.name);
-    },
+    }
   },
   watch: {
     sidebarVisibility() {
