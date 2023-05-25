@@ -73,7 +73,6 @@ import { required } from "@vuelidate/validators";
 import { Cropper } from "vue-advanced-cropper";
 import "vue-advanced-cropper/dist/style.css";
 import 'vue-advanced-cropper/dist/theme.compact.css';
-import { saveAs } from 'file-saver';
 
 // This function is used to detect the actual image type,
 function getMimeType(file, fallback = null) {
@@ -82,6 +81,7 @@ function getMimeType(file, fallback = null) {
 	for (let i = 0; i < byteArray.length; i++) {
 		header += byteArray[i].toString(16);
 	}
+  console.log(header)
 	switch (header) {
 		case '89504e47':
 			return 'image/png';
@@ -93,6 +93,8 @@ function getMimeType(file, fallback = null) {
 		case 'ffd8ffe3':
 		case 'ffd8ffe8':
 			return 'image/jpeg';
+      case '52494646':
+        return 'image/webp';
 		default:
 			return fallback;
 	}
@@ -107,7 +109,7 @@ export default {
   },
   data() {
     return {
-      file: "",
+      file: null,
       name: "",
       price: "",
       img: "https://images.unsplash.com/photo-1600984575359-310ae7b6bdf2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80",
@@ -120,6 +122,7 @@ export default {
   },
   methods: {
     crop() {
+      console.log("cropped")
     const { canvas } = this.$refs.cropper.getResult();
 			canvas.toBlob((blob) => {
 				//saveAs(blob);
@@ -130,41 +133,29 @@ export default {
 			this.image = {
 				src: null,
 				type: null,
+        name: null
 			};
 		},
 		loadImage(event) {
-			// Reference to the DOM input element
+			
 			const { files } = event.target;
-			// Ensure that you have a file before attempting to read it
+			
 			if (files && files[0]) {
-				// 1. Revoke the object URL, to allow the garbage collector to destroy the uploaded before file
+			
 				if (this.image.src) {
 					URL.revokeObjectURL(this.image.src);
 				}
-				// 2. Create the blob link to the file to optimize performance:
 				const blob = URL.createObjectURL(files[0]);
-				// 3. The steps below are designated to determine a file mime type to use it during the
-				// getting of a cropped image from the canvas. You can replace it them by the following string,
-				// but the type will be derived from the extension and it can lead to an incorrect result:
-				//
-				// this.image = {
-				//    src: blob;
-				//    type: files[0].type
-				// }
-				// Create a new FileReader to read this image binary data
 				const reader = new FileReader();
-				// Define a callback function to run, when FileReader finishes its job
+				
         console.log("test")
 				reader.onload = (e) => {
-					// Note: arrow function used here, so that "this.image" refers to the image of Vue component
 					this.image = {
-						// Read image as base64 and set it as src:
 						src: blob,
-						// Determine the image type to preserve it during the extracting the image from canvas:
 						type: getMimeType(e.target.result, files[0].type),
+            name: files[0].name
 					};
 				};
-				// Start the reader job - read file as a data url (base64 format)
 				reader.readAsArrayBuffer(files[0]);
 			}
 		},
@@ -190,7 +181,10 @@ export default {
       let formdata = new FormData();
       formdata.append("name", this.name);
       formdata.append("price", this.price);
-      formdata.append("image", this.file,'test.jpg');
+      if(this.image.src) {
+        //this.crop();
+        formdata.append("image",this.file,this.image.name);
+      }
       console.log(formdata);
       try {
         await this.axios
