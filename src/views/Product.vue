@@ -28,22 +28,28 @@
         <lable class="text-black/50 font-medium text-xl"> Image</lable>
 
         <div class="upload-example__cropper-wrapper">
-			<cropper ref="cropper" class="upload-example__cropper" check-orientation :src="image.src" />
-			<div class="upload-example__reset-button" title="Reset Image" @click="reset()">
-				<img src="../assets/images/shirt2.jpeg" />
-			</div>
-			<div class="upload-example__file-type" v-if="image.type">
-				{{ image.type }}
-			</div>
-		</div>
+          <cropper
+            ref="cropper"
+            class="upload-example__cropper"
+            check-orientation
+            :src="image.src"
+          />
+          <div class="upload-example__file-type" v-if="image.type">
+            {{ image.type }}
+          </div>
+        </div>
 
         <div class="upload-example__buttons-wrapper">
-			<button class="upload-example__button" @click="$refs.file.click()">
-				<input ref="file" type="file" accept="image/*" @change="loadImage($event)" />
-				Upload image
-			</button>
-			<button v-if="image.src" class="upload-example__button" @click="crop()">Download result</button>
-		</div>
+          <button class="upload-example__button" @click="$refs.file.click()">
+            <input
+              ref="file"
+              type="file"
+              accept="image/*"
+              @change="loadImage($event)"
+            />
+            Upload image
+          </button>
+        </div>
         <!-- <input
           type="file"
           id="file"
@@ -72,32 +78,32 @@ import { useVuelidate } from "@vuelidate/core";
 import { required } from "@vuelidate/validators";
 import { Cropper } from "vue-advanced-cropper";
 import "vue-advanced-cropper/dist/style.css";
-import 'vue-advanced-cropper/dist/theme.compact.css';
+import "vue-advanced-cropper/dist/theme.compact.css";
 
 // This function is used to detect the actual image type,
 function getMimeType(file, fallback = null) {
-	const byteArray = new Uint8Array(file).subarray(0, 4);
-	let header = '';
-	for (let i = 0; i < byteArray.length; i++) {
-		header += byteArray[i].toString(16);
-	}
-  console.log(header)
-	switch (header) {
-		case '89504e47':
-			return 'image/png';
-		case '47494638':
-			return 'image/gif';
-		case 'ffd8ffe0':
-		case 'ffd8ffe1':
-		case 'ffd8ffe2':
-		case 'ffd8ffe3':
-		case 'ffd8ffe8':
-			return 'image/jpeg';
-      case '52494646':
-        return 'image/webp';
-		default:
-			return fallback;
-	}
+  const byteArray = new Uint8Array(file).subarray(0, 4);
+  let header = "";
+  for (let i = 0; i < byteArray.length; i++) {
+    header += byteArray[i].toString(16);
+  }
+  console.log(header);
+  switch (header) {
+    case "89504e47":
+      return "image/png";
+    case "47494638":
+      return "image/gif";
+    case "ffd8ffe0":
+    case "ffd8ffe1":
+    case "ffd8ffe2":
+    case "ffd8ffe3":
+    case "ffd8ffe8":
+      return "image/jpeg";
+    case "52494646":
+      return "image/webp";
+    default:
+      return fallback;
+  }
 }
 
 export default {
@@ -114,57 +120,55 @@ export default {
       price: "",
       img: "https://images.unsplash.com/photo-1600984575359-310ae7b6bdf2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80",
       image: {
-				src: null,
-				type: null,
-			},
+        src: null,
+        type: null,
+      },
       //https://preline.co/docs/sidebar.html
     };
   },
   methods: {
     crop() {
-      console.log("cropped")
-    const { canvas } = this.$refs.cropper.getResult();
-			canvas.toBlob((blob) => {
-				//saveAs(blob);
+      console.log("cropped");
+      const { canvas } = this.$refs.cropper.getResult();
+      canvas.toBlob((blob) => {
+        //saveAs(blob);
         this.file = blob;
-			}, this.image.type);
-		},
-		reset() {
-			this.image = {
-				src: null,
-				type: null,
-        name: null
-			};
-		},
-		loadImage(event) {
-			
-			const { files } = event.target;
-			
-			if (files && files[0]) {
-			
-				if (this.image.src) {
-					URL.revokeObjectURL(this.image.src);
-				}
-				const blob = URL.createObjectURL(files[0]);
-				const reader = new FileReader();
-				
-        console.log("test")
-				reader.onload = (e) => {
-					this.image = {
-						src: blob,
-						type: getMimeType(e.target.result, files[0].type),
-            name: files[0].name
-					};
-				};
-				reader.readAsArrayBuffer(files[0]);
-			}
-		},
-	// destroyed() {
-	// 	// Revoke the object URL, to allow the garbage collector to destroy the uploaded before file
-	// 	if (this.image.src) {
-	// 		URL.revokeObjectURL(this.image.src);
-	// 	}
-	// },
+      }, this.image.type);
+    },
+    reset() {
+      this.image = {
+        src: null,
+        type: null,
+        name: null,
+      };
+    },
+    loadImage(event) {
+      const { files } = event.target;
+
+      if (files && files[0]) {
+        if (this.image.src) {
+          URL.revokeObjectURL(this.image.src);
+        }
+        const blob = URL.createObjectURL(files[0]);
+        const reader = new FileReader();
+
+        console.log("test");
+        reader.onload = (e) => {
+          this.image = {
+            src: blob,
+            type: getMimeType(e.target.result, files[0].type),
+            name: files[0].name,
+          };
+        };
+        reader.readAsArrayBuffer(files[0]);
+      }
+    },
+    // destroyed() {
+    // 	// Revoke the object URL, to allow the garbage collector to destroy the uploaded before file
+    // 	if (this.image.src) {
+    // 		URL.revokeObjectURL(this.image.src);
+    // 	}
+    // },
 
     // change({ coordinates, canvas }) {
     //   console.log(coordinates, canvas);
@@ -177,33 +181,61 @@ export default {
       if (!isFormCorrect) {
         return;
       }
-
+      var fileOfBlob = null;
       let formdata = new FormData();
       formdata.append("name", this.name);
       formdata.append("price", this.price);
-      if(this.image.src) {
-        //this.crop();
-        formdata.append("image",this.file,this.image.name);
+      if (this.image.src) {
+        const { canvas } = this.$refs.cropper.getResult();
+        let self = this;
+        var fileOfBlob = "";
+        canvas.toBlob(async (blob) => {
+          fileOfBlob = new File([blob], self.image.name);
+          formdata.append("image", fileOfBlob);
+          console.log("first" + fileOfBlob);
+          try {
+            await this.axios
+              .post(this.$api_url + "product/save", formdata, {
+                method: "POST",
+                headers: {
+                  Token: JSON.parse(localStorage.getItem("user")).token,
+                  "Content-Type": "multipart/form-data",
+                },
+              })
+              .then((response) => {
+                // console.log(response)
+                if (response.data.success == true) {
+                  console.log("save");
+                }
+              });
+          } catch (e) {
+            console.log("kkk" + e);
+          }
+        }, this.image.type);
+        this.$nextTick(() => {
+          console.log("second" + fileOfBlob);
+        });
+      } else {
+        try {
+            await this.axios
+              .post(this.$api_url + "product/save", formdata, {
+                method: "POST",
+                headers: {
+                  Token: JSON.parse(localStorage.getItem("user")).token,
+                  "Content-Type": "multipart/form-data",
+                },
+              })
+              .then((response) => {
+                // console.log(response)
+                if (response.data.success == true) {
+                  console.log("save");
+                }
+              });
+          } catch (e) {
+            console.log("kkk" + e);
+          }
       }
-      console.log(formdata);
-      try {
-        await this.axios
-          .post(this.$api_url + "product/save", formdata, {
-            method: "POST",
-            headers: {
-              Token: JSON.parse(localStorage.getItem("user")).token,
-              "Content-Type": "multipart/form-data",
-            },
-          })
-          .then((response) => {
-            // console.log(response)
-            if (response.data.success == true) {
-              console.log("save");
-            }
-          });
-      } catch (e) {
-        console.log("kkk" + e);
-      }
+      // var fileOfBlob = new File([this.file], this.image.name);
     },
   },
   watch: {
@@ -219,7 +251,7 @@ export default {
   },
 };
 </script>
-<style >
+<style>
 .upload-example {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -266,7 +298,8 @@ export default {
   transition: background 0.5s;
   margin: 0 16px;
 }
-.upload-example__button:hover, .upload-example__button:focus {
+.upload-example__button:hover,
+.upload-example__button:focus {
   background: #38d890;
 }
 .upload-example__button input {
