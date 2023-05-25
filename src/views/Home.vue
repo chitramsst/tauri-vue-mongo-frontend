@@ -329,7 +329,7 @@
             </div>
             <div>
               <div
-                class="px-4 py-2 bg-[#FF9494] rounded-full hover:bg-[#FF9494]/80 font-extrabold text-sm"
+                class="px-4 py-2 bg-[#FF9494] rounded-full hover:bg-[#FF9494]/80 hover:text-white  font-extrabold text-sm"
               >
                 BUY NOW
               </div>
@@ -381,7 +381,7 @@
             </div>
             <div>
               <div
-                class="px-4 py-2 border-2 border-[#C5C4C4] rounded-full hover:bg-[#FF9494]/80 font-extrabold text-sm text-[#C5C4C4]"
+                class="px-4 py-2 border-2 border-[#C5C4C4] rounded-full hover:bg-[#FF9494]/80 hover:text-white  font-extrabold text-sm text-[#C5C4C4]"
               >
                 BUY NOW
               </div>
@@ -433,7 +433,7 @@
             </div>
             <div>
               <div
-                class="px-4 py-2 border-2 border-[#C5C4C4] rounded-full hover:bg-[#FF9494]/80 font-extrabold text-sm text-[#C5C4C4]"
+                class="px-4 py-2 border-2 border-[#C5C4C4] rounded-full hover:bg-[#FF9494]/80 hover:text-white  font-extrabold text-sm text-[#C5C4C4]"
               >
                 BUY NOW
               </div>
@@ -484,7 +484,7 @@
             </div>
             <div>
               <div
-                class="px-4 py-2 border-2 border-[#C5C4C4] rounded-full hover:bg-[#FF9494]/80 font-extrabold text-sm text-[#C5C4C4]"
+                class="px-4 py-2 border-2 border-[#C5C4C4] rounded-full hover:bg-[#FF9494]/80 hover:text-white  font-extrabold text-sm text-[#C5C4C4]"
               >
                 BUY NOW
               </div>
@@ -750,7 +750,7 @@
             </div>
             <div>
               <div
-                class="px-4 py-2 bg-[#FF9494] rounded-full hover:bg-[#FF9494]/80 font-extrabold text-sm"
+                class="px-4 py-2 bg-[#FF9494] rounded-full hover:bg-[#FF9494]/80 hover:text-white  font-extrabold text-sm"
               >
                 BUY NOW
               </div>
@@ -802,7 +802,7 @@
             </div>
             <div>
               <div
-                class="px-4 py-2 border-2 border-[#C5C4C4] rounded-full hover:bg-[#FF9494]/80 font-extrabold text-sm text-[#C5C4C4]"
+                class="px-4 py-2 border-2 border-[#C5C4C4] rounded-full hover:bg-[#FF9494]/80 hover:text-white  font-extrabold text-sm text-[#C5C4C4]"
               >
                 BUY NOW
               </div>
@@ -854,7 +854,7 @@
             </div>
             <div>
               <div
-                class="px-4 py-2 border-2 border-[#C5C4C4] rounded-full hover:bg-[#FF9494]/80 font-extrabold text-sm text-[#C5C4C4]"
+                class="px-4 py-2 border-2 border-[#C5C4C4] rounded-full hover:bg-[#FF9494]/80 hover:text-white  font-extrabold text-sm text-[#C5C4C4]"
               >
                 BUY NOW
               </div>
@@ -905,7 +905,7 @@
             </div>
             <div>
               <div
-                class="px-4 py-2 border-2 border-[#C5C4C4] rounded-full hover:bg-[#FF9494]/80 font-extrabold text-sm text-[#C5C4C4]"
+                class="px-4 py-2 border-2 border-[#C5C4C4] rounded-full hover:bg-[#FF9494]/80 hover:text-white  font-extrabold text-sm text-[#C5C4C4]"
               >
                 BUY NOW
               </div>
@@ -957,7 +957,7 @@
             </div>
             <div>
               <div
-                class="px-4 py-2 bg-[#FF9494] rounded-full hover:bg-[#FF9494]/80 font-extrabold text-sm"
+                class="px-4 py-2 bg-[#FF9494] rounded-full hover:bg-[#FF9494]/80 hover:text-white  font-extrabold text-sm"
               >
                 BUY NOW
               </div>
@@ -1009,7 +1009,7 @@
             </div>
             <div>
               <div
-                class="px-4 py-2 border-2 border-[#C5C4C4] rounded-full hover:bg-[#FF9494]/80 font-extrabold text-sm text-[#C5C4C4]"
+                class="px-4 py-2 border-2 border-[#C5C4C4] rounded-full hover:bg-[#FF9494]/80 hover:text-white  font-extrabold text-sm text-[#C5C4C4]"
               >
                 BUY NOW
               </div>
@@ -1061,7 +1061,7 @@
             </div>
             <div>
               <div
-                class="px-4 py-2 border-2 border-[#C5C4C4] rounded-full hover:bg-[#FF9494]/80 font-extrabold text-sm text-[#C5C4C4]"
+                class="px-4 py-2 border-2 border-[#C5C4C4] rounded-full hover:bg-[#FF9494]/80 hover:text-white  font-extrabold text-sm text-[#C5C4C4]"
               >
                 BUY NOW
               </div>
