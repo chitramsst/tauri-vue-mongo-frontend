@@ -78,7 +78,7 @@
   </div>
 </template>
 <script>
-import Modal from "../components/modals/CategoryModal.vue";
+import Modal from "../components/modals/ProductImageModal.vue";
 import { useVuelidate } from "@vuelidate/core";
 import { required } from "@vuelidate/validators";
 export default {

@@ -26,19 +26,6 @@
       </div>
       <div class="flex flex-col w-full px-5 space-y-5">
         <lable class="text-black/50 font-medium text-xl"> Image</lable>
-
-        <div class="upload-example__cropper-wrapper">
-          <cropper
-            ref="cropper"
-            class="upload-example__cropper"
-            check-orientation
-            :src="image.src"
-          />
-          <div class="upload-example__file-type" v-if="image.type">
-            {{ image.type }}
-          </div>
-        </div>
-
         <div class="upload-example__buttons-wrapper">
           <button class="upload-example__button" @click="$refs.file.click()">
             <input
@@ -50,6 +37,9 @@
             Upload image
           </button>
         </div>
+        <Teleport to="#app1">
+          <Modal ref="samplemodal"></Modal>
+        </Teleport>
         <!-- <input
           type="file"
           id="file"
@@ -79,32 +69,9 @@ import { required } from "@vuelidate/validators";
 import { Cropper } from "vue-advanced-cropper";
 import "vue-advanced-cropper/dist/style.css";
 import "vue-advanced-cropper/dist/theme.compact.css";
+import Modal from "../components/modals/ProductImageModal.vue";
 
-// This function is used to detect the actual image type,
-function getMimeType(file, fallback = null) {
-  const byteArray = new Uint8Array(file).subarray(0, 4);
-  let header = "";
-  for (let i = 0; i < byteArray.length; i++) {
-    header += byteArray[i].toString(16);
-  }
-  console.log(header);
-  switch (header) {
-    case "89504e47":
-      return "image/png";
-    case "47494638":
-      return "image/gif";
-    case "ffd8ffe0":
-    case "ffd8ffe1":
-    case "ffd8ffe2":
-    case "ffd8ffe3":
-    case "ffd8ffe8":
-      return "image/jpeg";
-    case "52494646":
-      return "image/webp";
-    default:
-      return fallback;
-  }
-}
+
 
 export default {
   setup() {
@@ -112,29 +79,20 @@ export default {
   },
   components: {
     Cropper,
+    Modal,
   },
   data() {
     return {
-      file: null,
+      
       name: "",
       price: "",
       img: "https://images.unsplash.com/photo-1600984575359-310ae7b6bdf2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80",
-      image: {
-        src: null,
-        type: null,
-      },
+
       //https://preline.co/docs/sidebar.html
     };
   },
   methods: {
-    crop() {
-      console.log("cropped");
-      const { canvas } = this.$refs.cropper.getResult();
-      canvas.toBlob((blob) => {
-        //saveAs(blob);
-        this.file = blob;
-      }, this.image.type);
-    },
+    
     reset() {
       this.image = {
         src: null,
@@ -142,27 +100,7 @@ export default {
         name: null,
       };
     },
-    loadImage(event) {
-      const { files } = event.target;
 
-      if (files && files[0]) {
-        if (this.image.src) {
-          URL.revokeObjectURL(this.image.src);
-        }
-        const blob = URL.createObjectURL(files[0]);
-        const reader = new FileReader();
-
-        console.log("test");
-        reader.onload = (e) => {
-          this.image = {
-            src: blob,
-            type: getMimeType(e.target.result, files[0].type),
-            name: files[0].name,
-          };
-        };
-        reader.readAsArrayBuffer(files[0]);
-      }
-    },
     // destroyed() {
     // 	// Revoke the object URL, to allow the garbage collector to destroy the uploaded before file
     // 	if (this.image.src) {
@@ -176,6 +114,10 @@ export default {
     // handleFileUpload() {
     //   this.file = this.$refs.file.files[0];
     // },
+    loadImage(event) {
+      //this.$refs.samplemodal.loadImage(event)
+      this.$refs.samplemodal.showUniqueModal(event);
+    },
     async save() {
       const isFormCorrect = await this.v$.$validate();
       if (!isFormCorrect) {
@@ -217,23 +159,23 @@ export default {
         });
       } else {
         try {
-            await this.axios
-              .post(this.$api_url + "product/save", formdata, {
-                method: "POST",
-                headers: {
-                  Token: JSON.parse(localStorage.getItem("user")).token,
-                  "Content-Type": "multipart/form-data",
-                },
-              })
-              .then((response) => {
-                // console.log(response)
-                if (response.data.success == true) {
-                  console.log("save");
-                }
-              });
-          } catch (e) {
-            console.log("kkk" + e);
-          }
+          await this.axios
+            .post(this.$api_url + "product/save", formdata, {
+              method: "POST",
+              headers: {
+                Token: JSON.parse(localStorage.getItem("user")).token,
+                "Content-Type": "multipart/form-data",
+              },
+            })
+            .then((response) => {
+              // console.log(response)
+              if (response.data.success == true) {
+                console.log("save");
+              }
+            });
+        } catch (e) {
+          console.log("kkk" + e);
+        }
       }
       // var fileOfBlob = new File([this.file], this.image.name);
     },

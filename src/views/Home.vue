@@ -1932,7 +1932,7 @@
 </template>
 <script>
 import { Modal } from "bootstrap";
-import CategoryModal from "../components/modals/CategoryModal.vue";
+import CategoryModal from "../components/modals/ProductImageModal.vue";
 export default {
   data(){
       return {
