@@ -41,8 +41,8 @@
       <div class="flex flex-col w-full px-5 space-y-5">
         <lable class="text-black/50 font-medium text-xl"> Image</lable>
         <div class="flex w-full">
-          <div class="w-2/6 text-center">
-            <button class="upload-example__button" @click="$refs.file.click()">
+          <div class="w-2/6  text-center flex items-center  justify-center">
+            <button class="upload-example__button bg-blue-700 hover:bg-blue-400 focus:bg-blue-400" @click="$refs.file.click()" >
               <input
                 ref="file"
                 type="file"
@@ -224,22 +224,7 @@ export default {
 .upload-example__cropper-wrapper {
   position: relative;
 }
-.upload-example__reset-button {
-  position: absolute;
-  right: 20px;
-  bottom: 20px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 42px;
-  width: 42px;
-  background: rgba(63, 179, 127, 0.7);
-  transition: background 0.5s;
-}
-.upload-example__reset-button:hover {
-  background: #3fb37f;
-}
+
 .upload-example__buttons-wrapper {
   display: flex;
   justify-content: center;
@@ -249,14 +234,9 @@ export default {
   outline: solid transparent;
   color: white;
   font-size: 16px;
-  background: #3fb37f;
   cursor: pointer;
   transition: background 0.5s;
   margin: 0 16px;
-}
-.upload-example__button:hover,
-.upload-example__button:focus {
-  background: #38d890;
 }
 .upload-example__button input {
   display: none;
