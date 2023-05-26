@@ -26,19 +26,16 @@
       </div>
       <div class="flex flex-col w-full p-5 space-y-5">
         <lable class="text-black/50 font-medium text-xl"> Brand </lable>
-        <!-- <input
-          type="text"
-          class="h-15 w-full rounded-xl focus:border-stone-500 focus:ring-0 focus:inline-block text-xl text-black/50"
-          placeholder="Enter Price"
-          v-model="brand"
-          :class="v$.price.$error ? 'dark:border-red-500' : ''"
-        /> -->
         <select
           class="h-15 w-full rounded-xl text-xl text-black/50"
-          v-model="brand" placeholder="choose brand"  :class="v$.brand.$error ? 'dark:border-red-500' : ''"
+          v-model="brand"
+          placeholder="choose brand"
+          :class="v$.brand.$error ? 'dark:border-red-500' : ''"
         >
           <option value="">choose brand</option>
-          <option value="1">brand1</option>
+          <option :value="item._id" v-for="item in brandList">
+            {{ item.name }}
+          </option>
         </select>
       </div>
       <div class="flex flex-col w-full px-5 space-y-5">
@@ -93,7 +90,7 @@
 </template>
 <script>
 import { useVuelidate } from "@vuelidate/core";
-import { required } from "@vuelidate/validators";
+import { required, numeric } from "@vuelidate/validators";
 import { Cropper } from "vue-advanced-cropper";
 import "vue-advanced-cropper/dist/style.css";
 import "vue-advanced-cropper/dist/theme.compact.css";
@@ -109,6 +106,7 @@ export default {
   },
   data() {
     return {
+      brandList: [],
       file: null,
       name: "",
       price: "",
@@ -117,7 +115,29 @@ export default {
       //https://preline.co/docs/sidebar.html
     };
   },
+  mounted() {
+    this.getBrandsList();
+  },
   methods: {
+    /* get brands list */
+    async getBrandsList() {
+      try {
+        await this.axios
+          .get(this.$api_url + "product/get-brand-list", {
+            headers: {
+              Token: JSON.parse(localStorage.getItem("user")).token,
+            },
+          })
+          .then((response) => {
+            if (response.data.success == true) {
+              this.brandList = response.data.data;
+            }
+          });
+      } catch (e) {
+        console.log("kkk" + e);
+      }
+    },
+    /* image preview */
     showImage(blob) {
       console.log("blob" + blob);
       this.file = blob;
@@ -125,12 +145,16 @@ export default {
       var img = document.querySelector("#photo");
       img.src = imageUrl;
     },
-    reset() {
+    /* reset data */
+    resetData() {
       this.image = {
         src: null,
         type: null,
         name: null,
       };
+      this.name = "";
+      this.price = "";
+      this.brand = "";
     },
 
     // destroyed() {
@@ -153,8 +177,10 @@ export default {
       let formdata = new FormData();
       formdata.append("name", this.name);
       formdata.append("price", this.price);
-      formdata.append("brand_id", "647045840c87a98762f8d38a");
-      formdata.append("image", this.file, "test.jpg");
+      formdata.append("brand_id", this.brand);
+      if (this.file) {
+        formdata.append("image", this.file, "test.jpg");
+      }
       try {
         await this.axios
           .post(this.$api_url + "product/save", formdata, {
@@ -166,7 +192,7 @@ export default {
           })
           .then((response) => {
             if (response.data.success == true) {
-              console.log("save");
+              this.resetData();
             }
           });
       } catch (e) {
@@ -177,8 +203,8 @@ export default {
   validations() {
     return {
       name: { required },
-      price: { required },
-      brand : { required }
+      price: { required, numeric },
+      brand: { required },
     };
   },
 };
