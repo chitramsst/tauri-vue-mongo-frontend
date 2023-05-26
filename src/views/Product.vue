@@ -26,13 +26,20 @@
       </div>
       <div class="flex flex-col w-full p-5 space-y-5">
         <lable class="text-black/50 font-medium text-xl"> Brand </lable>
-        <input
+        <!-- <input
           type="text"
           class="h-15 w-full rounded-xl focus:border-stone-500 focus:ring-0 focus:inline-block text-xl text-black/50"
           placeholder="Enter Price"
-          v-model="price"
+          v-model="brand"
           :class="v$.price.$error ? 'dark:border-red-500' : ''"
-        />
+        /> -->
+        <select
+          class="h-15 w-full rounded-xl text-xl text-black/50"
+          v-model="brand"
+        >
+          <option value="">choose brand</option>
+          <option value="1">brand1</option>
+        </select>
       </div>
       <div class="flex flex-col w-full px-5 space-y-5">
         <lable class="text-black/50 font-medium text-xl"> Image</lable>
@@ -145,7 +152,7 @@ export default {
       let formdata = new FormData();
       formdata.append("name", this.name);
       formdata.append("price", this.price);
-      formdata.append("brand_id", '647045840c87a98762f8d38a');
+      formdata.append("brand_id", "647045840c87a98762f8d38a");
       formdata.append("image", this.file, "test.jpg");
       try {
         await this.axios
