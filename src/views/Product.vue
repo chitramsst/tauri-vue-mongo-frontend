@@ -24,7 +24,7 @@
           :class="v$.price.$error ? 'dark:border-red-500' : ''"
         />
       </div>
-      <div class="flex flex-col w-full p-5 space-y-5">
+      <div class="flex flex-col w-full px-5 space-y-5">
         <lable class="text-black/50 font-medium text-xl"> Brand </lable>
         <select
           class="h-15 w-full rounded-xl text-xl text-black/50 focus:border-stone-500 focus:ring-0 focus:inline-block"
@@ -155,6 +155,8 @@ export default {
       this.name = "";
       this.price = "";
       this.brand = "";
+      var img = document.querySelector("#photo");
+      img.src = '/src/assets/no-image.jpg';
     },
 
     // destroyed() {

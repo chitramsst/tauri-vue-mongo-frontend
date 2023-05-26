@@ -136,17 +136,13 @@
           "
         >
           <path
-            stroke-linecap="
-            
-            
-            
-            round"
+            stroke-linecap="round"
             stroke-linejoin="round"
             d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
           ></path>
         </svg>
       </div>
-      <div class="h-screen bg-white rounded-3xl p-10">
+      <div class="h-full min-h-[810px] bg-white rounded-3xl p-10">
         <router-view />
       </div>
     </div>
@@ -167,7 +163,7 @@ export default {
     sidebarVisibility() {
       this.sidebarVisibility = this.sidebarVisibility;
     },
-  }
+  },
 };
 </script>
 <style lang=""></style>
