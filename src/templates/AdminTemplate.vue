@@ -1,7 +1,7 @@
 <template lang="">
-  <div class="w-full mx-auto flex flex-row">
+  <div class="w-full mx-auto flex flex-row bg-slate-900">
     <div
-      class="inset-y-0 bg-gray-900 transition-opacity bg-opacity-75 fixed block bg-gradient-to-bl from-gray-900/75 to-gray-400"
+      class="inset-y-0 bg-slate-900 transition-opacity bg-opacity-75 fixed block"
       :class="sidebarVisibility ? 'w-64' : 'w-28'"
     >
       <div
@@ -15,7 +15,7 @@
       </div>
       <a
         @click="$router.push({ name: 'dashboard' })"
-        class="p-4 text-white bg-gray-700 hover:bg-gray-700 font-bold text-md flex flex-row items-center space-x-5"
+        class="p-4 text-white bg-slate-700 hover:bg-slate-700 font-bold text-md flex flex-row items-center space-x-5"
         :class="sidebarVisibility ? 'justify-left' : 'justify-center'"
       >
         <svg
@@ -40,7 +40,7 @@
       >
       <a
         @click="$router.push({ name: 'brand' })"
-        class="p-4 text-white hover:bg-gray-700 font-bold text-md flex flex-row items-center space-x-5"
+        class="p-4 text-white hover:bg-slate-700 font-bold text-md flex flex-row items-center space-x-5"
         :class="sidebarVisibility ? 'justify-left' : 'justify-center'"
       >
         <svg
@@ -65,7 +65,7 @@
       >
       <a
         @click="$router.push({ name: 'product' })"
-        class="p-4 text-white hover:bg-gray-700 font-bold text-md flex flex-row items-center space-x-5"
+        class="p-4 text-white hover:bg-slate-700 font-bold text-md flex flex-row items-center space-x-5"
         :class="sidebarVisibility ? 'justify-left' : 'justify-center'"
       >
         <svg
@@ -90,7 +90,7 @@
       >
       <a
         href="#"
-        class="p-4 text-white hover:bg-gray-700 font-bold text-md flex flex-row items-center space-x-5"
+        class="p-4 text-white hover:bg-slate-700 font-bold text-md flex flex-row items-center space-x-5"
         :class="sidebarVisibility ? 'justify-left' : 'justify-center'"
       >
         <svg
@@ -119,7 +119,7 @@
       :class="sidebarVisibility == true ? 'ml-64' : 'ml-28'"
     >
       <div
-        class="h-20 bg-gray-900 bg-opacity-75 text-slate-400 justify-left items-center flex bg-gradient-to-r from-gray-900/75 to-gray-400 p-5 w-full"
+        class="h-20 bg-slate-900 bg-opacity-75 text-slate-400 justify-left items-center flex"
       >
         <svg
           fill="none"
@@ -128,7 +128,7 @@
           viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg"
           aria-hidden="true"
-          class="h-10 w-10 p-1 bg-gray-900/80 shadow-md rounded-md"
+          class="h-10 w-10 p-1 bg-slate-900/80 shadow-md rounded-md"
           @click="
             sidebarVisibility == true
               ? (sidebarVisibility = false)
@@ -136,13 +136,17 @@
           "
         >
           <path
-            stroke-linecap="round"
+            stroke-linecap="
+            
+            
+            
+            round"
             stroke-linejoin="round"
             d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
           ></path>
         </svg>
       </div>
-      <div class="h-[875px] bg-white rounded-lg p-10">
+      <div class="h-screen bg-white rounded-3xl p-10">
         <router-view />
       </div>
     </div>
