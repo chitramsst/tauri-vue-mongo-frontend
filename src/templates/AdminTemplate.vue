@@ -39,7 +39,7 @@
         ></a
       >
       <a
-        @click="$router.push({ name: 'category' })"
+        @click="$router.push({ name: 'brand' })"
         class="p-4 text-white hover:bg-gray-700 font-bold text-md flex flex-row items-center space-x-5"
         :class="sidebarVisibility ? 'justify-left' : 'justify-center'"
       >
@@ -60,7 +60,7 @@
         <span
           class="flex items-center justify-center h-full"
           v-if="sidebarVisibility"
-          >Category</span
+          >Brand</span
         ></a
       >
       <a

@@ -49,7 +49,7 @@
           placeholder="Enter Price"
         /> -->
       </div>
-      <img id="photo">
+      <img id="photo" />
     </div>
     <div class="flex items-center justify-end w-full p-10 space-x-10">
       <button
@@ -72,8 +72,6 @@ import "vue-advanced-cropper/dist/style.css";
 import "vue-advanced-cropper/dist/theme.compact.css";
 import Modal from "../components/modals/ProductImageModal.vue";
 
-
-
 export default {
   setup() {
     return { v$: useVuelidate() };
@@ -88,17 +86,16 @@ export default {
       name: "",
       price: "",
       img: "https://images.unsplash.com/photo-1600984575359-310ae7b6bdf2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80",
-
       //https://preline.co/docs/sidebar.html
     };
   },
   methods: {
-    showImage(blob){
-         console.log("blob" + blob)
-         this.file = blob
-         var imageUrl = URL.createObjectURL( blob );
-         var img = document.querySelector( "#photo" );
-    img.src = imageUrl;
+    showImage(blob) {
+      console.log("blob" + blob);
+      this.file = blob;
+      var imageUrl = URL.createObjectURL(blob);
+      var img = document.querySelector("#photo");
+      img.src = imageUrl;
     },
     reset() {
       this.image = {
@@ -128,29 +125,24 @@ export default {
       let formdata = new FormData();
       formdata.append("name", this.name);
       formdata.append("price", this.price);
-      formdata.append("image",this.file,"test.jpg");
-          try {
-          await this.axios
-            .post(this.$api_url + "product/save", formdata, {
-              method: "POST",
-              headers: {
-                Token: JSON.parse(localStorage.getItem("user")).token,
-                "Content-Type": "multipart/form-data",
-              },
-            })
-            .then((response) => {
-              if (response.data.success == true) {
-                console.log("save");
-              }
-            });
-        } catch (e) {
-          console.log("kkk" + e);
-        }
-    }
-  },
-  watch: {
-    sidebarVisibility() {
-      this.sidebarVisibility = this.sidebarVisibility;
+      formdata.append("image", this.file, "test.jpg");
+      try {
+        await this.axios
+          .post(this.$api_url + "product/save", formdata, {
+            method: "POST",
+            headers: {
+              Token: JSON.parse(localStorage.getItem("user")).token,
+              "Content-Type": "multipart/form-data",
+            },
+          })
+          .then((response) => {
+            if (response.data.success == true) {
+              console.log("save");
+            }
+          });
+      } catch (e) {
+        console.log("kkk" + e);
+      }
     },
   },
   validations() {

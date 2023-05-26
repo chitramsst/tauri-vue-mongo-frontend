@@ -32,9 +32,9 @@ const loginRouter = createRouter({
 },
 
   {
-    path : '/category',
-    name : 'category',
-    component : () => import('../views/Category.vue'),
+    path : '/brand',
+    name : 'brand',
+    component : () => import('../views/Brand.vue'),
     meta: {
       requiresAuth: true,
       template: 'AdminTemplate'
