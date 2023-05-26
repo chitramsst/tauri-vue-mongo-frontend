@@ -35,7 +35,7 @@
         /> -->
         <select
           class="h-15 w-full rounded-xl text-xl text-black/50"
-          v-model="brand"
+          v-model="brand" placeholder="choose brand"  :class="v$.brand.$error ? 'dark:border-red-500' : ''"
         >
           <option value="">choose brand</option>
           <option value="1">brand1</option>
@@ -112,6 +112,7 @@ export default {
       file: null,
       name: "",
       price: "",
+      brand: "",
       img: "https://images.unsplash.com/photo-1600984575359-310ae7b6bdf2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80",
       //https://preline.co/docs/sidebar.html
     };
@@ -177,6 +178,7 @@ export default {
     return {
       name: { required },
       price: { required },
+      brand : { required }
     };
   },
 };
