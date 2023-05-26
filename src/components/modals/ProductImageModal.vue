@@ -107,6 +107,7 @@ export default {
       canvas.toBlob((blob) => {
         this.$emit("displayImage", blob);
       }, this.image.type);
+      this.uniqueModal.hide();
     },
     loadImage(event) {
       const { files } = event.target;

@@ -49,6 +49,7 @@
           placeholder="Enter Price"
         /> -->
       </div>
+      <img id="photo">
     </div>
     <div class="flex items-center justify-end w-full p-10 space-x-10">
       <button
@@ -95,6 +96,9 @@ export default {
     showImage(blob){
          console.log("blob" + blob)
          this.file = blob
+         var imageUrl = URL.createObjectURL( blob );
+         var img = document.querySelector( "#photo" );
+    img.src = imageUrl;
     },
     reset() {
       this.image = {
