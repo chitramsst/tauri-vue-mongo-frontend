@@ -30,6 +30,7 @@
               class="upload-example__cropper"
               check-orientation
               :src="image.src"
+              aspect-ratio="1"
             />
             <div class="upload-example__file-type" v-if="image.type">
               {{ image.type }}

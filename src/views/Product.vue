@@ -24,23 +24,43 @@
           :class="v$.price.$error ? 'dark:border-red-500' : ''"
         />
       </div>
+      <div class="flex flex-col w-full p-5 space-y-5">
+        <lable class="text-black/50 font-medium text-xl"> Brand </lable>
+        <input
+          type="text"
+          class="h-15 w-full rounded-xl focus:border-stone-500 focus:ring-0 focus:inline-block text-xl text-black/50"
+          placeholder="Enter Price"
+          v-model="price"
+          :class="v$.price.$error ? 'dark:border-red-500' : ''"
+        />
+      </div>
       <div class="flex flex-col w-full px-5 space-y-5">
         <lable class="text-black/50 font-medium text-xl"> Image</lable>
-        <div class="upload-example__buttons-wrapper">
-          <button class="upload-example__button" @click="$refs.file.click()">
-            <input
-              ref="file"
-              type="file"
-              accept="image/*"
-              @change="loadImage($event)"
+        <div class="flex w-full">
+          <div class="w-2/6 text-center">
+            <button class="upload-example__button" @click="$refs.file.click()">
+              <input
+                ref="file"
+                type="file"
+                accept="image/*"
+                @change="loadImage($event)"
+              />
+              Upload image
+            </button>
+          </div>
+          <div
+            class="w-2/6 border-2 rounded-lg border-slate-200 h-100 w-100 justify-center items-center flex"
+          >
+            <img
+              id="photo"
+              src="/src/assets/no-image.jpg"
+              class="object-fit h-500 w-500"
             />
-            Upload image
-          </button>
-        </div>
-        <Teleport to="#app1">
-          <Modal ref="samplemodal" @displayImage="showImage($event)"></Modal>
-        </Teleport>
-        <!-- <input
+          </div>
+          <Teleport to="#app1">
+            <Modal ref="samplemodal" @displayImage="showImage($event)"></Modal>
+          </Teleport>
+          <!-- <input
           type="file"
           id="file"
           ref="file"
@@ -48,8 +68,8 @@
           class="h-15 w-full rounded-xl focus:border-stone-500 focus:ring-0 focus:inline-block text-xl text-black/50"
           placeholder="Enter Price"
         /> -->
+        </div>
       </div>
-      <img id="photo" />
     </div>
     <div class="flex items-center justify-end w-full p-10 space-x-10">
       <button
@@ -125,6 +145,7 @@ export default {
       let formdata = new FormData();
       formdata.append("name", this.name);
       formdata.append("price", this.price);
+      formdata.append("brand_id", '647045840c87a98762f8d38a');
       formdata.append("image", this.file, "test.jpg");
       try {
         await this.axios
@@ -187,14 +208,12 @@ export default {
 .upload-example__buttons-wrapper {
   display: flex;
   justify-content: center;
-  margin-top: 17px;
 }
 .upload-example__button {
   border: none;
   outline: solid transparent;
   color: white;
   font-size: 16px;
-  padding: 10px 20px;
   background: #3fb37f;
   cursor: pointer;
   transition: background 0.5s;
