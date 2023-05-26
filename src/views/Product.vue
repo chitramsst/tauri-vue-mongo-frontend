@@ -27,7 +27,7 @@
       <div class="flex flex-col w-full p-5 space-y-5">
         <lable class="text-black/50 font-medium text-xl"> Brand </lable>
         <select
-          class="h-15 w-full rounded-xl text-xl text-black/50"
+          class="h-15 w-full rounded-xl text-xl text-black/50 focus:border-stone-500 focus:ring-0 focus:inline-block"
           v-model="brand"
           placeholder="choose brand"
           :class="v$.brand.$error ? 'dark:border-red-500' : ''"
@@ -39,7 +39,7 @@
         </select>
       </div>
       <div class="flex flex-col w-full px-5 space-y-5">
-        <lable class="text-black/50 font-medium text-xl"> Image</lable>
+        <lable class="text-black/50 font-medium text-xl "> Image</lable>
         <div class="flex w-full">
           <div class="w-2/6  text-center flex items-center  justify-center">
             <button class="upload-example__button bg-blue-700 hover:bg-blue-400 focus:bg-blue-400" @click="$refs.file.click()" >
