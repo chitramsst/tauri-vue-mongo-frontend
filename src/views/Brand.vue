@@ -77,6 +77,7 @@ export default {
         this.file = files[0];
       }
     },
+    /* save brand */
     async save() {
       const isFormCorrect = await this.v$.$validate();
       if (!isFormCorrect) {
@@ -97,12 +98,28 @@ export default {
           .then((response) => {
             if (response.data.success == true) {
               this.$toast.info("Brand Saved Successfully");
+              this.resetData();
             }
           });
       } catch (e) {
         console.log("kkk" + e);
       }
     },
+    /* reset data */
+        /* reset data */
+        resetData() {
+      this.image = {
+        src: null,
+        type: null,
+        name: null,
+      };
+      this.name = "";
+      this.file= "";
+      var img = document.querySelector("#photo");
+      img.src = '/src/assets/no-image.jpg';
+      this.v$.$reset()
+    },
+
   },
   validations() {
     return {

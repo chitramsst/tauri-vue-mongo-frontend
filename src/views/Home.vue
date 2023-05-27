@@ -498,10 +498,6 @@
       <div class="grid grid-cols-4 my-7 gap-7">
         <div class="bg-white rounded-lg flex items-center justify-center" v-for="item in brandList" :key="item._id">
           <div class="h-20 w-20 rounded-full">
-            {{
-              $api_url+item.logo
-            }}
-          <!-- <img src="https://cdn.vuetifyjs.com/images/parallax/material.jpg" class="h-full w-full rounded-full"/> -->
           <img :src="$api_url+item.logo" class="h-full w-full rounded-full"/> 
           </div>
           <div class="flex m-5 justify-between">
