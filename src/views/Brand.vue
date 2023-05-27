@@ -78,7 +78,6 @@ export default {
       }
     },
     async save() {
-      console.log(this.file);
       const isFormCorrect = await this.v$.$validate();
       if (!isFormCorrect) {
         return;
@@ -97,7 +96,6 @@ export default {
           })
           .then((response) => {
             if (response.data.success == true) {
-              console.log("save");
               this.$toast.info("Brand Saved Successfully");
             }
           });

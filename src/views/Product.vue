@@ -194,7 +194,10 @@ export default {
           })
           .then((response) => {
             if (response.data.success == true) {
-              this.resetData();
+              this.$toast.info("Product Saved Successfully");
+              this.$nextTick(()=>{
+                this.resetData();
+              })
             }
           });
       } catch (e) {
