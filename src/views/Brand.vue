@@ -25,9 +25,7 @@
               @change="onSelectFile()"
             />
           </div>
-          <div
-            class="w-2/6 h-100 w-100 justify-center items-center flex"
-          >
+          <div class="w-2/6 h-100 w-100 justify-center items-center flex">
             <img
               id="photo"
               ref="fileInput"
@@ -73,33 +71,34 @@ export default {
         const reader = new FileReader();
         reader.onload = (e) => {
           var img = document.querySelector("#photo");
-      img.src = reader.result;
+          img.src = reader.result;
         };
         reader.readAsDataURL(files[0]);
-        this.file = files[0]   
+        this.file = files[0];
       }
     },
     async save() {
-      console.log("gg");
+      console.log(this.file);
       const isFormCorrect = await this.v$.$validate();
       if (!isFormCorrect) {
         return;
       }
       try {
+        let formdata = new FormData();
+        formdata.append("name", this.name);
+        formdata.append("image", this.file, "test.jpg");
         await this.axios
-          .post(
-            this.$api_url + "brand/save",
-            { name: this.name },
-            {
-              method: "POST",
-              headers: {
-                Token: JSON.parse(localStorage.getItem("user")).token,
-              },
-            }
-          )
+          .post(this.$api_url + "brand/save", formdata, {
+            method: "POST",
+            headers: {
+              Token: JSON.parse(localStorage.getItem("user")).token,
+              "Content-Type": "multipart/form-data",
+            },
+          })
           .then((response) => {
             if (response.data.success == true) {
               console.log("save");
+              this.$toast.info("Brand Saved Successfully");
             }
           });
       } catch (e) {
