@@ -85,7 +85,7 @@ export default {
       try {
         let formdata = new FormData();
         formdata.append("name", this.name);
-        formdata.append("image", this.file, "test.jpg");
+        formdata.append("image", this.file,this.file.name);
         await this.axios
           .post(this.$api_url + "brand/save", formdata, {
             method: "POST",

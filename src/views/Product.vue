@@ -139,7 +139,6 @@ export default {
     },
     /* image preview */
     showImage(blob) {
-      console.log("blob" + blob);
       this.file = blob;
       var imageUrl = URL.createObjectURL(blob);
       var img = document.querySelector("#photo");
@@ -157,6 +156,7 @@ export default {
       this.brand = "";
       var img = document.querySelector("#photo");
       img.src = '/src/assets/no-image.jpg';
+      this.v$.$reset()
     },
 
     // destroyed() {
@@ -181,7 +181,8 @@ export default {
       formdata.append("price", this.price);
       formdata.append("brand_id", this.brand);
       if (this.file) {
-        formdata.append("image", this.file, "test.jpg");
+        console.log(this.file)
+        formdata.append("image", this.file,"test.jpg");
       }
       try {
         await this.axios
