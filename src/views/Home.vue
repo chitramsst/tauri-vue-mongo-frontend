@@ -1800,10 +1800,12 @@ export default {
     return {
       showLogin: false,
       brandList: [],
-      productList: []
+      productList: [],
+      user: localStorage.getItem('user')
     };
   },
   mounted() {
+    console.log(this.user)
     this.getBrandsList();
     this.getBestSellerProductList();
   },
@@ -1822,11 +1824,11 @@ export default {
         console.log("kkk" + e);
       }
     },
-      /* get brands list */
+      /* get products list */
       async getBestSellerProductList() {
       try {
         await this.axios
-          .get(this.$api_url + "home/get-bestseller-product-list")
+          .get(this.$api_url + "home/get-product-list")
           .then((response) => {
             console.log(response)
             if (response.data.success == true) {

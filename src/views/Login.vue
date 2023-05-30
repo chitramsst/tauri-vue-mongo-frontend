@@ -117,12 +117,27 @@ export default {
       email: "",
       password: "",
       login_error: false,
+      user: JSON.parse(localStorage.getItem("user")),
     };
   },
   components: {
     Modal,
   },
-  mounted() {},
+  mounted() {
+    console.log(localStorage.getItem("user"));
+    if (this.user) {
+      if (this.user.user_type == 1) {
+        this.$router.push({
+          name: "dashboard",
+        });
+      }
+      if (this.user.user_type == 2) {
+        this.$router.push({
+          name: "home",
+        });
+      }
+    }
+  },
   methods: {
     openModal() {
       this.$refs.samplemodal.showUniqueModal();

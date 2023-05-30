@@ -5,11 +5,11 @@
       :class="sidebarVisibility ? 'w-64' : 'w-28'"
     >
       <div
-        class="justify-center flex items-center p-4 border-b-[0.01px] border-black"
+        class="justify-center flex items-center py-4" @click="$router.push({name:'home'})"
       >
         <img
-          src="../assets/images/profile.png"
-          class="m-2 w-16 h-16 border-spacing-2 border-2 border-b rounded-full object-fill object-center"
+          src="../assets/pngegg.png"
+          class="m-2 w-20 h-20 border-spacing-2  object-fill object-center p-2"
           alt=""
         />
       </div>
@@ -110,6 +110,7 @@
         <span
           class="flex items-center justify-center h-full"
           v-if="sidebarVisibility"
+          @click="logout"
           >Logout</span
         ></a
       >
@@ -158,7 +159,14 @@ export default {
       sidebarVisibility: true,
     };
   },
-
+  methods: {
+     logout(){
+      localStorage.setItem("user",null);
+      this.$router.push({
+        name: 'login'
+      })
+     }
+  },
   watch: {
     sidebarVisibility() {
       this.sidebarVisibility = this.sidebarVisibility;
