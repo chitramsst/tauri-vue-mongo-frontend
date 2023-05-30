@@ -35,7 +35,8 @@
         <div class="flex items-center gap-4 text-sm font-semibold">
           <span>Order Traking</span>
           <span>
-           <a @click="$router.push({name:'login'})"> Login </a>
+           <a @click="$router.push({name:'login'})" v-if="user=='null'"> Login </a>
+           <a @click="logout()" v-if="user!='null'"> Logout </a>
           </span>
           <div class="flex gap-2 items-center">
             <img
@@ -153,7 +154,7 @@
             <span class="text-[#FF9494]"> $985.,35 </span>
           </div>
         </div>
-        <div class="relative" @click="showLogin = !showLogin">
+        <div class="relative" @click="showLogin = !showLogin" >
           <img
             src="../assets/images/profile.png"
             class="m-2 w-12 h-12 rounded-full object-fill object-center"
@@ -161,15 +162,15 @@
           />
           <div
             class="absolute z-10 mt-2 rounded-md bg-white shadow-lg top-5 -right-[80px]"
-            v-if="showLogin"
+            v-if="showLogin && (user!='null')" 
           >
             <div class="py-1">
-              <a
+              <!-- <a
                 @click="$router.push({ name: 'login' })"
                 class="text-gray-700 block px-4 py-2 text-sm"
                 >Login</a
-              >
-              <a href="#" class="text-gray-700 block px-4 py-2 text-sm"
+              > -->
+              <a @click="logout()" class="text-gray-700 block px-4 py-2 text-sm"
                 >Signout</a
               >
             </div>
@@ -1828,7 +1829,7 @@ export default {
       async getBestSellerProductList() {
       try {
         await this.axios
-          .get(this.$api_url + "home/get-product-list")
+          .get(this.$api_url + "home/get-bestseller-product-list")
           .then((response) => {
             console.log(response)
             if (response.data.success == true) {
@@ -1839,6 +1840,13 @@ export default {
         console.log("kkk" + e);
       }
     },
+    /* logout */
+    logout(){
+      localStorage.setItem("user",null);
+      this.$router.push({
+        name: 'login'
+      })
+     }
   }
 };
 </script>
