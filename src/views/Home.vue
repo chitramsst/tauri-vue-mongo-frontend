@@ -34,7 +34,9 @@
         </div>
         <div class="flex items-center gap-4 text-sm font-semibold">
           <span>Order Traking</span>
-          <span>Help</span>
+          <span>
+           <a @click="$router.push({name:'login'})"> Login </a>
+          </span>
           <div class="flex gap-2 items-center">
             <img
               src="https://cdn.britannica.com/97/1597-004-05816F4E/Flag-India.jpg"
@@ -42,7 +44,7 @@
               alt=""
             />
             <span>English</span>
-            
+
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -151,28 +153,27 @@
             <span class="text-[#FF9494]"> $985.,35 </span>
           </div>
         </div>
-        <div class="relative" @click="showLogin=!showLogin">
-        <img
-          src="../assets/images/profile.png"
-          class="m-2 w-12 h-12 rounded-full object-fill object-center"
-          alt=""
-        />
-        <div
-              class="absolute z-10 mt-2 rounded-md bg-white shadow-lg top-5 -right-[80px] " v-if="showLogin"
-            >
-              <div class="py-1">
-                <a
-                  @click='$router.push({ name: "login" })'
-                  class="text-gray-700 block px-4 py-2 text-sm"
-                  >Login</a
-                >
-                <a
-                  href="#"
-                  class="text-gray-700 block px-4 py-2 text-sm"
-                  >Signout</a
-                >
-              </div>
+        <div class="relative" @click="showLogin = !showLogin">
+          <img
+            src="../assets/images/profile.png"
+            class="m-2 w-12 h-12 rounded-full object-fill object-center"
+            alt=""
+          />
+          <div
+            class="absolute z-10 mt-2 rounded-md bg-white shadow-lg top-5 -right-[80px]"
+            v-if="showLogin"
+          >
+            <div class="py-1">
+              <a
+                @click="$router.push({ name: 'login' })"
+                class="text-gray-700 block px-4 py-2 text-sm"
+                >Login</a
+              >
+              <a href="#" class="text-gray-700 block px-4 py-2 text-sm"
+                >Signout</a
+              >
             </div>
+          </div>
         </div>
       </div>
     </div>
@@ -262,7 +263,7 @@
     <div class="w-full bg-white py-20 h-[400px]">
       <div class="flex justify-between items-center w-full px-36">
         <span class="text-black text-[40px] font-bold">
-          Our best seller product</span
+          Our best seller product </span
         >
         <button class="bg-[#FF9494] px-4 py-4 rounded-full">
           <span class="flex items-center gap-2">
@@ -285,10 +286,10 @@
         </button>
       </div>
       <div class="flex gap-x-7 w-full pt-7 absolute px-36">
-        <div class="w-1/4 bg-white shadow-lg p-2 rounded-lg max-h-[400px]">
+        <div class="w-1/4 bg-white shadow-lg p-2 rounded-lg max-h-[400px]" v-for="(item,index) in productList" :key="item_id">
           <div class="relative">
             <img
-              src="../assets/images/shirt.jpeg"
+              :src="$api_url+item.image"
               class="h-[250px] w-full rounded-2xl"
             />
             <svg
@@ -308,16 +309,16 @@
           </div>
           <div class="flex m-5 justify-between">
             <div class="flex flex-col">
-              <span class="text-black text-lg font-bold"> Smart t- Shirt </span>
+              <span class="text-black text-lg font-bold"> {{item.name}} </span>
               <div class="flex gap-4">
                 <span
                   class="text-[#C5C4C4] line-through decoration-[#FF9494] text-[13px] font-bold"
                 >
-                  100$
+                  {{item.price}} $
                 </span>
                 <div class="flex justify-center items-center">
                   <span class="text-black font-extrabold text-[20px]">
-                    40
+                    {{(parseFloat(item.price))-(parseFloat(item.price)*35/100)  }}
                   </span>
                   <span
                     class="text-[#FF9494] font-extrabold text-[12px] align-bottom"
@@ -329,14 +330,14 @@
             </div>
             <div>
               <div
-                class="px-4 py-2 bg-[#FF9494] rounded-full hover:bg-[#FF9494]/80 hover:text-white  font-extrabold text-sm"
+                class="px-4 py-2 bg-[#FF9494] rounded-full hover:bg-[#FF9494]/80 hover:text-white font-extrabold text-sm"
               >
                 BUY NOW
               </div>
             </div>
           </div>
         </div>
-        <div class="w-1/4 bg-white shadow-lg p-2 rounded-lg max-h-[400px]">
+        <!-- <div class="w-1/4 bg-white shadow-lg p-2 rounded-lg max-h-[400px]">
           <div class="relative">
             <img
               src="../assets/images/shirt2.jpeg"
@@ -381,7 +382,7 @@
             </div>
             <div>
               <div
-                class="px-4 py-2 border-2 border-[#C5C4C4] rounded-full hover:bg-[#FF9494]/80 hover:text-white  font-extrabold text-sm text-[#C5C4C4]"
+                class="px-4 py-2 border-2 border-[#C5C4C4] rounded-full hover:bg-[#FF9494]/80 hover:text-white font-extrabold text-sm text-[#C5C4C4]"
               >
                 BUY NOW
               </div>
@@ -433,7 +434,7 @@
             </div>
             <div>
               <div
-                class="px-4 py-2 border-2 border-[#C5C4C4] rounded-full hover:bg-[#FF9494]/80 hover:text-white  font-extrabold text-sm text-[#C5C4C4]"
+                class="px-4 py-2 border-2 border-[#C5C4C4] rounded-full hover:bg-[#FF9494]/80 hover:text-white font-extrabold text-sm text-[#C5C4C4]"
               >
                 BUY NOW
               </div>
@@ -484,25 +485,34 @@
             </div>
             <div>
               <div
-                class="px-4 py-2 border-2 border-[#C5C4C4] rounded-full hover:bg-[#FF9494]/80 hover:text-white  font-extrabold text-sm text-[#C5C4C4]"
+                class="px-4 py-2 border-2 border-[#C5C4C4] rounded-full hover:bg-[#FF9494]/80 hover:text-white font-extrabold text-sm text-[#C5C4C4]"
               >
                 BUY NOW
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
     <div class="px-36 mt-[200px] py-28">
       <span class="text-black text-[40px] font-bold"> Choose By Brand</span>
       <div class="grid grid-cols-4 my-7 gap-7">
-        <div class="bg-white rounded-lg flex items-center justify-center" v-for="item in brandList" :key="item._id">
+        <div
+          class="bg-white rounded-lg flex items-center justify-center"
+          v-for="item in brandList"
+          :key="item._id"
+        >
           <div class="h-20 w-20 rounded-full">
-          <img :src="$api_url+item.logo" class="h-full w-full rounded-full"/> 
+            <img
+              :src="$api_url + item.logo"
+              class="h-full w-full rounded-full"
+            />
           </div>
           <div class="flex m-5 justify-between">
             <div class="flex flex-col">
-              <span class="text-black text-lg font-bold"> {{ item.name }} </span>
+              <span class="text-black text-lg font-bold">
+                {{ item.name }}
+              </span>
               <div class="flex gap-4">
                 <span class="text-[#C5C4C4] text-[17px] font-bold"
                   >Delivery within 24 hour
@@ -602,7 +612,7 @@
             </div>
             <div>
               <div
-                class="px-4 py-2 bg-[#FF9494] rounded-full hover:bg-[#FF9494]/80 hover:text-white  font-extrabold text-sm"
+                class="px-4 py-2 bg-[#FF9494] rounded-full hover:bg-[#FF9494]/80 hover:text-white font-extrabold text-sm"
               >
                 BUY NOW
               </div>
@@ -654,7 +664,7 @@
             </div>
             <div>
               <div
-                class="px-4 py-2 border-2 border-[#C5C4C4] rounded-full hover:bg-[#FF9494]/80 hover:text-white  font-extrabold text-sm text-[#C5C4C4]"
+                class="px-4 py-2 border-2 border-[#C5C4C4] rounded-full hover:bg-[#FF9494]/80 hover:text-white font-extrabold text-sm text-[#C5C4C4]"
               >
                 BUY NOW
               </div>
@@ -706,7 +716,7 @@
             </div>
             <div>
               <div
-                class="px-4 py-2 border-2 border-[#C5C4C4] rounded-full hover:bg-[#FF9494]/80 hover:text-white  font-extrabold text-sm text-[#C5C4C4]"
+                class="px-4 py-2 border-2 border-[#C5C4C4] rounded-full hover:bg-[#FF9494]/80 hover:text-white font-extrabold text-sm text-[#C5C4C4]"
               >
                 BUY NOW
               </div>
@@ -757,7 +767,7 @@
             </div>
             <div>
               <div
-                class="px-4 py-2 border-2 border-[#C5C4C4] rounded-full hover:bg-[#FF9494]/80 hover:text-white  font-extrabold text-sm text-[#C5C4C4]"
+                class="px-4 py-2 border-2 border-[#C5C4C4] rounded-full hover:bg-[#FF9494]/80 hover:text-white font-extrabold text-sm text-[#C5C4C4]"
               >
                 BUY NOW
               </div>
@@ -809,7 +819,7 @@
             </div>
             <div>
               <div
-                class="px-4 py-2 bg-[#FF9494] rounded-full hover:bg-[#FF9494]/80 hover:text-white  font-extrabold text-sm"
+                class="px-4 py-2 bg-[#FF9494] rounded-full hover:bg-[#FF9494]/80 hover:text-white font-extrabold text-sm"
               >
                 BUY NOW
               </div>
@@ -861,7 +871,7 @@
             </div>
             <div>
               <div
-                class="px-4 py-2 border-2 border-[#C5C4C4] rounded-full hover:bg-[#FF9494]/80 hover:text-white  font-extrabold text-sm text-[#C5C4C4]"
+                class="px-4 py-2 border-2 border-[#C5C4C4] rounded-full hover:bg-[#FF9494]/80 hover:text-white font-extrabold text-sm text-[#C5C4C4]"
               >
                 BUY NOW
               </div>
@@ -913,7 +923,7 @@
             </div>
             <div>
               <div
-                class="px-4 py-2 border-2 border-[#C5C4C4] rounded-full hover:bg-[#FF9494]/80 hover:text-white  font-extrabold text-sm text-[#C5C4C4]"
+                class="px-4 py-2 border-2 border-[#C5C4C4] rounded-full hover:bg-[#FF9494]/80 hover:text-white font-extrabold text-sm text-[#C5C4C4]"
               >
                 BUY NOW
               </div>
@@ -1786,35 +1796,48 @@
 import { Modal } from "bootstrap";
 import CategoryModal from "../components/modals/ProductImageModal.vue";
 export default {
-  data(){
-      return {
-        showLogin : false,
-        brandList : []
-      }
+  data() {
+    return {
+      showLogin: false,
+      brandList: [],
+      productList: []
+    };
   },
-  mounted(){
-     this.getBrandsList()
+  mounted() {
+    this.getBrandsList();
+    this.getBestSellerProductList();
   },
   methods: {
-       /* get brands list */
-       async getBrandsList() {
+    /* get brands list */
+    async getBrandsList() {
       try {
         await this.axios
           .get(this.$api_url + "home/get-brand-list")
           .then((response) => {
             if (response.data.success == true) {
               this.brandList = response.data.data;
-              console.log(response)
             }
           });
       } catch (e) {
         console.log("kkk" + e);
       }
     },
-  },
-  components: {
-    CategoryModal,
-  },
+      /* get brands list */
+      async getBestSellerProductList() {
+      try {
+        await this.axios
+          .get(this.$api_url + "home/get-bestseller-product-list")
+          .then((response) => {
+            console.log(response)
+            if (response.data.success == true) {
+              this.productList = response.data.data;
+            }
+          });
+      } catch (e) {
+        console.log("kkk" + e);
+      }
+    },
+  }
 };
 </script>
 <style lang=""></style>
