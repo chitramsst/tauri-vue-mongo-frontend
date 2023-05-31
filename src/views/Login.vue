@@ -1,7 +1,7 @@
 <template>
-  <div class="overflow-y-auto sm:p-0 pt-4 pr-4 pb-20 pl-4 bg-gray-800">
+  <div class="overflow-y-auto sm:p-0 pt-4 pr-4 pb-20 pl-4 bg-gray-800 h-full">
     <div
-      class="flex justify-center items-end text-center min-h-screen sm:block"
+      class="flex justify-center items-end text-center min-h-screen sm:block h-full"
     >
       <div class="flex justify-start p-5">
         <button class="bg-blue-800 px-4 py-4 rounded-full">
@@ -39,65 +39,66 @@
           </span>
         </button>
       </div>
-
-      <div
-        class="inline-block text-left bg-gray-900 rounded-lg overflow-hidden align-bottom transition-all transform shadow-2xl sm:my-8 sm:align-middle sm:max-w-xl sm:w-full"
-      >
+      <div class="h-[700px] flx justify-center items-center flex">
         <div
-          class="items-center w-full mr-auto ml-auto max-w-7xl md:px-12 lg:px-24"
+          class="inline-block text-left bg-gray-900 rounded-lg overflow-hidden align-bottom transition-all transform shadow-2xl sm:max-w-xl sm:w-full"
         >
-          <div class="grid grid-cols-1">
-            <form ref="form">
-              <div
-                class="flex flex-col items-center pt-6 pr-6 pb-6 pl-6 bg-gray-900"
-              >
-                <img
-                  src="https://socialized.pt/wp-content/uploads/2021/04/E-commerce-6-razoes-para-comecares-a-investir.png"
-                  class="flex-shrink-0 object-cover object-center btn- flex w-16 h-16 mr-auto -mb-8 ml-auto rounded-full shadow-xl"
-                />
-                <p
-                  class="mt-8 text-2xl font-semibold leading-none text-white tracking-tighter lg:text-3xl"
+          <div
+            class="items-center w-full mr-auto ml-auto max-w-7xl md:px-12 lg:px-24"
+          >
+            <div class="grid grid-cols-1">
+              <form ref="form">
+                <div
+                  class="flex flex-col items-center pt-6 pr-6 pb-6 pl-6 bg-gray-900"
                 >
-                  Sign In
-                </p>
-                <div class="mb-3 w-full mt-3">
-                  <label
-                    for="email"
-                    class="block mb-2 text-xs font-medium text-white"
-                    >Your email</label
-                  >
-                  <input
-                    type="email"
-                    v-model="email"
-                    id="email"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1.5 md:p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    :class="v$.email.$error ? 'dark:border-red-500' : ''"
-                    @keydown.enter="login"
+                  <img
+                    src="https://socialized.pt/wp-content/uploads/2021/04/E-commerce-6-razoes-para-comecares-a-investir.png"
+                    class="flex-shrink-0 object-cover object-center btn- flex w-16 h-16 mr-auto -mb-8 ml-auto rounded-full shadow-xl"
                   />
-                </div>
-                <div class="mb-3 w-full mt-3">
-                  <label
-                    for="password"
-                    class="block mb-2 text-xs font-medium text-white"
-                    >Your password</label
+                  <p
+                    class="mt-8 text-2xl font-semibold leading-none text-white tracking-tighter lg:text-3xl"
                   >
-                  <input
-                    type="password"
-                    id="password"
-                    v-model="password"
-                    class="border border-gray-300 text-gray-900 text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1.5 md:p-2.5 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:bg-gray-700 dark:focus:border-blue-500"
-                    :class="v$.password.$error ? 'dark:border-red-500' : ''"
-                  />
+                    Sign In
+                  </p>
+                  <div class="mb-3 w-full mt-3">
+                    <label
+                      for="email"
+                      class="block mb-2 text-xs font-medium text-white"
+                      >Your email</label
+                    >
+                    <input
+                      type="email"
+                      v-model="email"
+                      id="email"
+                      class="bg-gray-50 border border-gray-300 text-gray-900 text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1.5 md:p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      :class="v$.email.$error ? 'dark:border-red-500' : ''"
+                      @keydown.enter="login"
+                    />
+                  </div>
+                  <div class="mb-3 w-full mt-3">
+                    <label
+                      for="password"
+                      class="block mb-2 text-xs font-medium text-white"
+                      >Your password</label
+                    >
+                    <input
+                      type="password"
+                      id="password"
+                      v-model="password"
+                      class="border border-gray-300 text-gray-900 text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1.5 md:p-2.5 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:bg-gray-700 dark:focus:border-blue-500"
+                      :class="v$.password.$error ? 'dark:border-red-500' : ''"
+                    />
+                  </div>
+                  <div class="w-full mt-6">
+                    <a
+                      class="flex text-center items-center justify-center w-full pt-2 pr-2 pb-2 pl-2 text-base font-medium text-white bg-blue-800 rounded-xl transition duration-500 ease-in-out transform hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                      @click="login()"
+                      >Login</a
+                    >
+                  </div>
                 </div>
-                <div class="w-full mt-6">
-                  <a
-                    class="flex text-center items-center justify-center w-full pt-2 pr-2 pb-2 pl-2 text-base font-medium text-white bg-blue-800 rounded-xl transition duration-500 ease-in-out transform hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                    @click="login()"
-                    >Login</a
-                  >
-                </div>
-              </div>
-            </form>
+              </form>
+            </div>
           </div>
         </div>
       </div>
