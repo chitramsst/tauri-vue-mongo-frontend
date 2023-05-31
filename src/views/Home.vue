@@ -35,8 +35,15 @@
         <div class="flex items-center gap-4 text-sm font-semibold">
           <span>Order Traking</span>
           <span>
-           <a @click="$router.push({name:'login'})" v-if="user=='null'"> Login </a>
-           <a @click="logout()" v-if="user!='null'"> Logout </a>
+            <a
+              @click="$router.push({ name: 'login' })"
+              v-if="user === null || user === undefined"
+            >
+              Login
+            </a>
+            <a @click="logout()" v-if="user !== null && user !== undefined">
+              Logout
+            </a>
           </span>
           <div class="flex gap-2 items-center">
             <img
@@ -154,23 +161,29 @@
             <span class="text-[#FF9494]"> $985.,35 </span>
           </div>
         </div>
-        <div class="relative" @click="showLogin = !showLogin" >
+        <div class="relative" @click="showLogin = !showLogin">
           <img
             src="../assets/images/profile.png"
             class="m-2 w-12 h-12 rounded-full object-fill object-center"
             alt=""
+            v-if="user !== null && user !== undefined"
+          />
+          <img
+            src="../assets/guest.webp"
+            class="m-2 w-12 h-12 rounded-full object-fill object-center"
+            alt=""
+            v-if="user === null || user === undefined"
           />
           <div
             class="absolute z-10 mt-2 rounded-md bg-white shadow-lg top-5 -right-[80px]"
-            v-if="showLogin && (user!='null')" 
           >
             <div class="py-1">
-              <!-- <a
-                @click="$router.push({ name: 'login' })"
-                class="text-gray-700 block px-4 py-2 text-sm"
+              <a @click="$router.push({name:'login'})" class="text-gray-700 block px-4 py-2 text-sm"
+              v-if="showLogin==true && (user === null || user === undefined)"
                 >Login</a
-              > -->
+              >
               <a @click="logout()" class="text-gray-700 block px-4 py-2 text-sm"
+              v-if="showLogin==true && user !== null && user !== undefined"
                 >Signout</a
               >
             </div>
@@ -264,8 +277,8 @@
     <div class="w-full bg-white py-20 h-[400px]">
       <div class="flex justify-between items-center w-full px-36">
         <span class="text-black text-[40px] font-bold">
-          Our best seller product </span
-        >
+          Our best seller product
+        </span>
         <button class="bg-[#FF9494] px-4 py-4 rounded-full">
           <span class="flex items-center gap-2">
             <span class="font-bold text-xl"> See all Product</span>
@@ -287,10 +300,14 @@
         </button>
       </div>
       <div class="flex gap-x-7 w-full pt-7 absolute px-36">
-        <div class="w-1/4 bg-white shadow-lg p-2 rounded-lg max-h-[400px]" v-for="(item,index) in productList" :key="item_id">
+        <div
+          class="w-1/4 bg-white shadow-lg p-2 rounded-lg max-h-[400px]"
+          v-for="(item, index) in productList"
+          :key="item_id"
+        >
           <div class="relative">
             <img
-              :src="$api_url+item.image"
+              :src="$api_url + item.image"
               class="h-[250px] w-full rounded-2xl"
             />
             <svg
@@ -300,6 +317,8 @@
               stroke-width="1.5"
               stroke="currentColor"
               class="w-9 h-9 text-[#C5C4C4] absolute top-2 right-2 rounded-full bg-white p-2 stroke-[3px]"
+              v-if="user != 'null'"
+              @click="toggleLike(item._id)"
             >
               <path
                 stroke-linecap="round"
@@ -310,16 +329,21 @@
           </div>
           <div class="flex m-5 justify-between">
             <div class="flex flex-col">
-              <span class="text-black text-lg font-bold"> {{item.name}} </span>
+              <span class="text-black text-lg font-bold">
+                {{ item.name }}
+              </span>
               <div class="flex gap-4">
                 <span
                   class="text-[#C5C4C4] line-through decoration-[#FF9494] text-[13px] font-bold"
                 >
-                  {{item.price}} $
+                  {{ item.price }} $
                 </span>
                 <div class="flex justify-center items-center">
                   <span class="text-black font-extrabold text-[20px]">
-                    {{(parseFloat(item.price))-(parseFloat(item.price)*35/100)  }}
+                    {{
+                      parseFloat(item.price) -
+                      (parseFloat(item.price) * 35) / 100
+                    }}
                   </span>
                   <span
                     class="text-[#FF9494] font-extrabold text-[12px] align-bottom"
@@ -1802,11 +1826,13 @@ export default {
       showLogin: false,
       brandList: [],
       productList: [],
-      user: localStorage.getItem('user')
+      user: JSON.parse(localStorage.getItem("user")),
     };
   },
   mounted() {
-    console.log(this.user)
+    if(this.user!==null){
+      console.log("111" + this.user._id);
+    }
     this.getBrandsList();
     this.getBestSellerProductList();
   },
@@ -1825,13 +1851,12 @@ export default {
         console.log("kkk" + e);
       }
     },
-      /* get products list */
-      async getBestSellerProductList() {
+    /* get products list */
+    async getBestSellerProductList() {
       try {
         await this.axios
           .get(this.$api_url + "home/get-bestseller-product-list")
           .then((response) => {
-            console.log(response)
             if (response.data.success == true) {
               this.productList = response.data.data;
             }
@@ -1841,13 +1866,40 @@ export default {
       }
     },
     /* logout */
-    logout(){
-      localStorage.setItem("user",null);
+    logout() {
+      localStorage.setItem("user", null);
       this.$router.push({
-        name: 'login'
-      })
-     }
-  }
+        name: "login",
+      });
+    },
+    /* toggle Like */
+    async toggleLike(product_id) {
+      let item = {
+        post_id: product_id,
+        user_id: this.user._id,
+      };
+      try {
+        await this.axios
+          .get(
+            this.$api_url + "product/toggle-like",
+            {
+              item,
+            },
+            {
+              headers: {
+                Token: JSON.parse(localStorage.getItem("user")).token,
+              },
+            }
+          )
+          .then((response) => {
+            if (response.data.success == true) {
+            }
+          });
+      } catch (e) {
+        console.log("kkk" + e);
+      }
+    },
+  },
 };
 </script>
 <style lang=""></style>

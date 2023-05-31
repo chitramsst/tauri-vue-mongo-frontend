@@ -25,6 +25,6 @@ app.use(ToastPlugin,{
 app.config.globalProperties.$api_url = 'http://localhost:3000/'
 axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
 app.mount("#app");
-console.log(localStorage.getItem('user'))
+//console.log(localStorage.getItem('user'))
 // import { useAuthStore } from "./store/authStore";
 // console.log("test" + useAuthStore().isLoggedIn())
