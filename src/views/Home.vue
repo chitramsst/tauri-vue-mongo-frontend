@@ -178,12 +178,18 @@
             class="absolute z-10 mt-2 rounded-md bg-white shadow-lg top-5 -right-[80px]"
           >
             <div class="py-1">
-              <a @click="$router.push({name:'login'})" class="text-gray-700 block px-4 py-2 text-sm"
-              v-if="showLogin==true && (user === null || user === undefined)"
+              <a
+                @click="$router.push({ name: 'login' })"
+                class="text-gray-700 block px-4 py-2 text-sm"
+                v-if="
+                  showLogin == true && (user === null || user === undefined)
+                "
                 >Login</a
               >
-              <a @click="logout()" class="text-gray-700 block px-4 py-2 text-sm"
-              v-if="showLogin==true && user !== null && user !== undefined"
+              <a
+                @click="logout()"
+                class="text-gray-700 block px-4 py-2 text-sm"
+                v-if="showLogin == true && user !== null && user !== undefined"
                 >Signout</a
               >
             </div>
@@ -317,7 +323,7 @@
               stroke-width="1.5"
               stroke="currentColor"
               class="w-9 h-9 text-[#C5C4C4] absolute top-2 right-2 rounded-full bg-white p-2 stroke-[3px]"
-              v-if="user != 'null'"
+              v-if="user !== null && user !== undefined"
               @click="toggleLike(item._id)"
             >
               <path
@@ -1830,7 +1836,7 @@ export default {
     };
   },
   mounted() {
-    if(this.user!==null){
+    if (this.user !== null) {
       console.log("111" + this.user._id);
     }
     this.getBrandsList();
@@ -1875,12 +1881,12 @@ export default {
     /* toggle Like */
     async toggleLike(product_id) {
       let item = {
-        post_id: product_id,
+        product_id: product_id,
         user_id: this.user._id,
       };
       try {
         await this.axios
-          .get(
+          .post(
             this.$api_url + "product/toggle-like",
             {
               item,
@@ -1893,6 +1899,7 @@ export default {
           )
           .then((response) => {
             if (response.data.success == true) {
+              console.log(response.data.data)
             }
           });
       } catch (e) {
