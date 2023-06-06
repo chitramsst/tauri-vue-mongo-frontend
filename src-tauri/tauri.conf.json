@@ -8,7 +8,7 @@
   },
   "package": {
     "productName": "tauri-app",
-    "version": "0.0.0"
+    "version": "2.0.0"
   },
   "tauri": {
     "allowlist": {
@@ -27,14 +27,19 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "com.tauri.dev",
+      "identifier": "com.ecommerce.dev",
       "targets": "all"
     },
     "security": {
       "csp": null
     },
-    "updater": {
-      "active": false
+     "updater": {
+      "active": true,
+      "endpoints": [
+        "https://chitratanishka.online/updaterTauri/currentUpdate.json"
+      ],
+      "dialog": true,
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDI2OUMwNkI1NjY4MEY4MwpSV1NERDJoV2E4QnBBcGhoaUNLL0ZCaDN6T09IendOVjRnSmd4ZnNqcVhWYzY2RE5wVTF6OE5VKwo="
     },
     "windows": [
       {
