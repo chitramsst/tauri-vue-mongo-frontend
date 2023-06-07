@@ -13,6 +13,15 @@ const loginRouter = createRouter({
         }
     },
     {
+      path : '/all-products',
+      name : 'allProducts',
+      component : () => import('../views/AllProducts.vue'),
+      meta: {
+        requiresAuth: true,
+        template: 'LoginTemplate'
+      }
+  },
+    {
       path : '/',
       name : 'home',
       component : () => import('../views/Home.vue'),
