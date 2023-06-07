@@ -188,7 +188,7 @@
       <div class="flex justify-between items-center w-full px-36"></div>
       <div class="grid grid-cols-4 gap-7 w-full pt-7 px-36">
         <ProductItem  v-for="(item, index) in productList"
-          :key="item_id" :item="item"/>
+          :key="item_id" :item="item" @toggleProductLike="toggleProductLike"/>
       </div>
     </div>
   </div>
@@ -252,45 +252,55 @@ export default {
         name: "login",
       });
     },
-    /* toggle Like */
-    async toggleLike(product_id) {
-      let item = {
-        product_id: product_id,
-        user_id: this.user._id,
-      };
-      try {
-        await this.axios
-          .post(
-            this.$api_url + "product/toggle-like",
-            {
-              item,
-            },
-            {
-              headers: {
-                Token: JSON.parse(localStorage.getItem("user")).token,
-              },
-            }
-          )
-          .then((response) => {
-            if (response.data.success == true) {
-              let index = this.productList.findIndex((x) => {
-                return x._id == product_id;
-              });
-              if (index != -1) {
-                this.productList[index] = response.data.data;
-                // if(response.data.data==1) {
-                //   this.productList[index].like_id.push(likedata)
-                // }
-                // if(response.data.data==2) {
-                //  this.productList[index].like_id.pop(likedata)
-                // }
-              }
-            }
-          });
-      } catch (e) {
-        console.log("kkk" + e);
+    // /* toggle Like */
+    // async toggleLike(product_id) {
+    //   let item = {
+    //     product_id: product_id,
+    //     user_id: this.user._id,
+    //   };
+    //   try {
+    //     await this.axios
+    //       .post(
+    //         this.$api_url + "product/toggle-like",
+    //         {
+    //           item,
+    //         },
+    //         {
+    //           headers: {
+    //             Token: JSON.parse(localStorage.getItem("user")).token,
+    //           },
+    //         }
+    //       )
+    //       .then((response) => {
+    //         if (response.data.success == true) {
+    //           let index = this.productList.findIndex((x) => {
+    //             return x._id == product_id;
+    //           });
+    //           if (index != -1) {
+    //             this.productList[index] = response.data.data;
+    //             // if(response.data.data==1) {
+    //             //   this.productList[index].like_id.push(likedata)
+    //             // }
+    //             // if(response.data.data==2) {
+    //             //  this.productList[index].like_id.pop(likedata)
+    //             // }
+    //           }
+    //         }
+    //       });
+    //   } catch (e) {
+    //     console.log("kkk" + e);
+    //   }
+    // },
+    /* toggle product like */ 
+    toggleProductLike(event){
+     let product= event.currentProduct;
+     let index = this.productList.findIndex((x)=>{
+        return x._id == product._id
+     })
+      if(index!=-1){
+        this.productList[index] = product;
       }
-    },
+    }
   },
 };
 </script>

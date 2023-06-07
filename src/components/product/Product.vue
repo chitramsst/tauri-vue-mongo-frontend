@@ -86,6 +86,9 @@ export default {
         
      }
     },
+    emits : [
+        'toggleProductLike'
+    ],
   data() {
     return {
       showLogin: false,
@@ -96,50 +99,11 @@ export default {
     };
   },
   created() {
-    console.log("item")
+    //console.log("item")
   },
   mounted() {
-    if (this.user !== null) {
-    }
-    this.getBrandsList();
-    this.getBestSellerProductList();
   },
   methods: {
-    /* get brands list */
-    async getBrandsList() {
-      try {
-        await this.axios
-          .get(this.$api_url + "home/get-brand-list-all")
-          .then((response) => {
-            if (response.data.success == true) {
-              this.brandList = response.data.data;
-            }
-          });
-      } catch (e) {
-        console.log("kkk" + e);
-      }
-    },
-    /* get products list */
-    async getBestSellerProductList() {
-      try {
-        await this.axios
-          .get(this.$api_url + "home/get-product-list-all")
-          .then((response) => {
-            if (response.data.success == true) {
-              this.productList = response.data.data;
-            }
-          });
-      } catch (e) {
-        console.log("kkk" + e);
-      }
-    },
-    /* logout */
-    logout() {
-      localStorage.setItem("user", null);
-      this.$router.push({
-        name: "login",
-      });
-    },
     /* toggle Like */
     async toggleLike(product_id) {
       let item = {
@@ -161,18 +125,9 @@ export default {
           )
           .then((response) => {
             if (response.data.success == true) {
-              let index = this.productList.findIndex((x) => {
-                return x._id == product_id;
-              });
-              if (index != -1) {
-                this.productList[index] = response.data.data;
-                // if(response.data.data==1) {
-                //   this.productList[index].like_id.push(likedata)
-                // }
-                // if(response.data.data==2) {
-                //  this.productList[index].like_id.pop(likedata)
-                // }
-              }
+            this.$emit('toggleProductLike',{
+                'currentProduct' : response.data.data
+            })
             }
           });
       } catch (e) {
