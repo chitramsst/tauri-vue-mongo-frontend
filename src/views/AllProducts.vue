@@ -165,7 +165,10 @@
             </div>
           </div> -->
 
-          <button class="bg-[#FF9494] px-4 py-4 rounded-full"  v-if="user !== null && user !== undefined">
+          <button
+            class="bg-[#FF9494] px-4 py-4 rounded-full"
+            v-if="user !== null && user !== undefined"
+          >
             <span class="flex gap-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -179,16 +182,26 @@
                   d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"
                 />
               </svg>
-              </span>
+            </span>
           </button>
         </div>
       </div>
     </div>
     <div class="w-full bg-white py-20 h-screen">
-      <div class="flex justify-between items-center w-full px-36"></div>
+      <div class="flex justify-end items-center w-full px-36 text-black"> 
+        <select class="focus:outline-none focus:border-transparent focus:bg-none">
+          <option value=""> All </option>
+          <option value="1"> Price below 100 </option>
+          <option value="2"> Price above 100 </option>
+        </select>
+      </div>
       <div class="grid grid-cols-4 gap-7 w-full pt-7 px-36">
-        <ProductItem  v-for="(item, index) in productList"
-          :key="item_id" :item="item" @toggleProductLike="toggleProductLike"/>
+        <ProductItem
+          v-for="(item, index) in productListFilter"
+          :key="item_id"
+          :item="item"
+          @toggleProductLike="toggleProductLike"
+        />
       </div>
     </div>
   </div>
@@ -196,11 +209,11 @@
 <script>
 import { Modal } from "bootstrap";
 import CategoryModal from "../components/modals/ProductImageModal.vue";
-import ProductItem from "../components/product/Product.vue"
+import ProductItem from "../components/product/Product.vue";
 export default {
-    components: {
-        ProductItem
-    },
+  components: {
+    ProductItem,
+  },
   data() {
     return {
       showLogin: false,
@@ -208,6 +221,7 @@ export default {
       productList: [],
       user: JSON.parse(localStorage.getItem("user")),
       cart: [],
+      filterPrice: ""
     };
   },
   mounted() {
@@ -291,17 +305,25 @@ export default {
     //     console.log("kkk" + e);
     //   }
     // },
-    /* toggle product like */ 
-    toggleProductLike(event){
-     let product= event.currentProduct;
-     let index = this.productList.findIndex((x)=>{
-        return x._id == product._id
-     })
-      if(index!=-1){
+    /* toggle product like */
+    toggleProductLike(event) {
+      let product = event.currentProduct;
+      let index = this.productList.findIndex((x) => {
+        return x._id == product._id;
+      });
+      if (index != -1) {
         this.productList[index] = product;
       }
-    }
+    },
   },
+  computed:{
+    productListFilter: function() {
+
+      return this.productList.filter( function(item){
+           return parseInt(item.price) <= 100
+      })
+    }
+  }
 };
 </script>
 <style lang=""></style>
